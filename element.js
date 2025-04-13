@@ -1,22 +1,14 @@
-import { Dna } from "./dna";
-import { Color } from "./dna-alleles";
+export class Element {
+    constructor(name, colorDna) {
+        this.name = name;
+        this.colorDna = colorDna;
+    }
 
-export class Element(name, slot1, slot2, active) {
-    this.name = name;
-    this.slot1 = slot1;
-    this.slot2 = slot2;
-    this.active = active;
-
-    setActive() {
-        if ( slot1 === Color.dom || slot2 === Color.dom ) {
-            return active = Color.dom
-        }
-        else {
-            return active = Color.rec
-        }
+    function capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
     checkDna() {
-        console.log(`${this.name} ...`)
+        console.log(`${this.name}'s color DNA alleles are ${this.colorDna.slot1.toUpperCase()} and ${this.colorDna.slot2}`)
     }
 }

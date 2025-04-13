@@ -1,10 +1,4 @@
-import { Dna } from "./dna";
+import { Dna } from "./dna.js";
 
 export class Color extends Dna {
-    constructor(rec, dom, type) {
-        super(rec, dom);
-        this.name = type;
     }
-
-}
-

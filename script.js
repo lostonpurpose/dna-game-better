@@ -1,5 +1,12 @@
-import { Dna } from "./dna";
-import { Color } from "./dna-alleles";
+import { Color } from "./dna-alleles.js";
+import { Element } from "./element.js";
 
-const adam = new Color("blue", "blue", "Adam");
-const eve = new Color("yellow", "yellow", )
+const colorDom = new Color("blue", "blue", "color")
+const colorRec = new Color("yellow", "yellow", "color")
+
+
+
+const adam = new Element("Adam", colorDom);
+const eve = new Element("Eve", colorRec);
+
+adam.checkDna();
