@@ -9,7 +9,7 @@ const borderDom = new Border("noBorder", "noBorder");
 const borderRec = new Border("Border", "Border");
 
 
-
+// generate OG generation
 const adam = new Element("Adam", colorDom, borderDom);
 const eve = new Element("Eve", colorRec, borderRec);
 
@@ -51,7 +51,7 @@ function generateBorderSlots(parent1, parent2) {
 };
 
 
-
+// generate first true generation
 const abel = new Element("Abel", generateColorSlots(adam, eve), generateBorderSlots(adam, eve));
 const leia = new Element("Abel", generateColorSlots(adam, eve), generateBorderSlots(adam, eve));
 
@@ -65,8 +65,8 @@ turdBoy.checkDna();
 
 const numberOne = document.querySelector(".first-true-child");
 
-
-function insertChild(child) {
+// this just creates Turd Boy, the original child
+function insertNumberOne(child) {
     numberOne.innerText = child.name;
 
     // color check
@@ -88,16 +88,59 @@ function insertChild(child) {
     }
 };
 
-insertChild(turdBoy);
+insertNumberOne(turdBoy);
+
+
+function insertChild(element) {
+    const currentItem = document.querySelector(`.${element.name}`);
+    // color check
+    if (element.colorDna.slot1 === "green" && element.colorDna.slot2 === "green") {
+        currentItem.classList.add("color-special")
+    }
+    else if (element.colorDna.slot1 === element.colorDna.domColor || element.colorDna.slot2 === element.colorDna.domColor) {
+    currentItem.classList.add("color-dom")
+    }
+    else {
+        currentItem.classList.add("color-rec")
+    }
+    // border check
+    if (element.borderDna.slot1 === element.borderDna.domBorder || element.borderDna.slot2 === element.borderDna.domBorder) {
+        return
+    }
+    else {
+        currentItem.classList.add("border-rec")
+    }
+};
 
 // function to generate elements
 
-function genOne() {
-    const firstUl = document.getElementById("g1-ul-1")
-    const firsttUl2 = document.getElementById("g1-ul-2")
+const diarrhea = new Element("diarrhea", generateColorSlots(abel, leia), generateBorderSlots(abel, leia));
+const poopy = new Element("poopy", generateColorSlots(abel, leia), generateBorderSlots(abel, leia));
 
-    firstUl.insertAdjacentHTML("afterend", "<li>Hello!</li>");
-    firsttUl2.insertAdjacentHTML("afterend", "<li>Bye!</li>");
+const asshat = new Element("asshat", generateColorSlots(abel, leia), generateBorderSlots(abel, leia));
+const farquar = new Element("farquar", generateColorSlots(abel, leia), generateBorderSlots(abel, leia))
+
+const firstGens = [diarrhea, poopy];
+const firstGens2 = [asshat, farquar];
+
+
+
+function genOne(firstGens, firstGens2) {
+    const firstUl = document.getElementById("g1-ul-1")
+    const firstUl2 = document.getElementById("g1-ul-2")
+
+    firstGens.forEach(element => {
+        firstUl.insertAdjacentHTML("beforeend", `<li class="${element.name}">${element.name}</li>`);
+        insertChild(element);
+    });
+    
+    firstGens2.forEach(element => {
+        firstUl2.insertAdjacentHTML("beforeend", `<li class="${element.name}">${element.name}</li>`);
+        insertChild(element);
+    });
+
+    
+
 };
 
-genOne();
+genOne(firstGens, firstGens2);
