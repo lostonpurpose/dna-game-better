@@ -59,7 +59,7 @@ const leia = new Element("Abel", generateColorSlots(adam, eve), generateBorderSl
 // abel.checkDna();
 // leia.checkDna();
 
-const turdBoy = new Element("Turd Boy", generateColorSlots(abel, leia), generateBorderSlots(abel, leia));
+const turdBoy = new Element("TurdBoy", generateColorSlots(abel, leia), generateBorderSlots(abel, leia));
 
 turdBoy.checkDna();
 
@@ -68,6 +68,9 @@ const numberOne = document.querySelector(".first-true-child");
 // this just creates Turd Boy, the original child
 function insertNumberOne(child) {
     numberOne.innerText = child.name;
+
+    numberOne.insertAdjacentHTML("afterend", `<div class="${child.name}"></div>`);
+
 
     // color check
     if (child.colorDna.slot1 === "green" && child.colorDna.slot2 === "green") {
@@ -112,35 +115,54 @@ function insertChild(element) {
     }
 };
 
-// function to generate elements
 
+// first true generation
 const diarrhea = new Element("diarrhea", generateColorSlots(abel, leia), generateBorderSlots(abel, leia));
 const poopy = new Element("poopy", generateColorSlots(abel, leia), generateBorderSlots(abel, leia));
 
 const asshat = new Element("asshat", generateColorSlots(abel, leia), generateBorderSlots(abel, leia));
-const farquar = new Element("farquar", generateColorSlots(abel, leia), generateBorderSlots(abel, leia))
+const farquar = new Element("farquar", generateColorSlots(abel, leia), generateBorderSlots(abel, leia));
 
 const firstGens = [diarrhea, poopy];
 const firstGens2 = [asshat, farquar];
 
+const firstUl = document.getElementById("g1-ul-1")
+const firstUl2 = document.getElementById("g1-ul-2")
+// end
+
+// second generation
+const dookie = new Element("dookie", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy));
+const pupcake = new Element("pupcake", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy));
+const sasquatch = new Element("sasquatch", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy));
+const titsmcgee = new Element("titsmcgee", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy));
+const craphole = new Element("craphole", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar));
+const weener = new Element("weener", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar));
+const buttstreaks = new Element("buttstreaks", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar));
+const fartty = new Element("fartty", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar));
+
+const secondGens = [dookie, pupcake, sasquatch, titsmcgee, craphole];
+const secondGens2 = [weener, buttstreaks, fartty];
+
+const secondUl = document.getElementById("g2-ul-1")
+const secondUl2 = document.getElementById("g2-ul-2")
+// end
 
 
-function genOne(firstGens, firstGens2) {
-    const firstUl = document.getElementById("g1-ul-1")
-    const firstUl2 = document.getElementById("g1-ul-2")
+// function to generate child elements
+function childGenerator(firstGens, firstGens2, ul1, ul2) {
+    
 
     firstGens.forEach(element => {
-        firstUl.insertAdjacentHTML("beforeend", `<li class="${element.name}">${element.name}</li>`);
+        ul1.insertAdjacentHTML("beforeend", `<li class="${element.name}">${element.name}</li>`);
         insertChild(element);
     });
     
     firstGens2.forEach(element => {
-        firstUl2.insertAdjacentHTML("beforeend", `<li class="${element.name}">${element.name}</li>`);
+        ul2.insertAdjacentHTML("beforeend", `<li class="${element.name}">${element.name}</li>`);
         insertChild(element);
     });
-
-    
-
 };
 
-genOne(firstGens, firstGens2);
+childGenerator(firstGens, firstGens2, firstUl, firstUl2);
+
+childGenerator(secondGens, secondGens2, secondUl, secondUl2)
