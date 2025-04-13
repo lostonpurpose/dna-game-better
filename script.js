@@ -60,13 +60,13 @@ const numberOne = document.querySelector(".first-true-child");
 
 function insertChild(child) {
     numberOne.innerText = child.name;
-    if (child.colorDna.slot1 === "blue" || child.colorDna.slot2 === "blue") {
+    if (child.colorDna.slot1 === child.colorDna.domColor || child.colorDna.slot2 === child.colorDna.domColor) {
     numberOne.classList.add("color-dom")
     }
     else {
         numberOne.classList.add("color-rec")
     }
-    if (child.borderDna.slot1 === "noBorder" || child.borderDna.slot2 === "noBorder") {
+    if (child.borderDna.slot1 === child.borderDna.domBorder || child.borderDna.slot2 === child.borderDna.domBorder) {
         return
     }
     else {
