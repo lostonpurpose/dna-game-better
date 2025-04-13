@@ -69,7 +69,16 @@ const numberOne = document.querySelector(".first-true-child");
 function insertNumberOne(child) {
     numberOne.innerText = child.name;
 
+    
+
+    // creates head
     numberOne.insertAdjacentHTML("afterend", `<div class="${child.name}"></div>`);
+
+    const facehuh = document.querySelector(`.${child.name}`);
+
+    // creates eyes
+    facehuh.insertAdjacentHTML("beforeend", `<div class="${child.name}-eye1"></div>`);
+    facehuh.insertAdjacentHTML("beforeend", `<div class="${child.name}-eye2"></div>`);
 
 
     // color check
