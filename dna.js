@@ -1,8 +1,7 @@
 export class Dna {
-    constructor(slot1, slot2, type) {
+    constructor(slot1, slot2) {
         this.slot1 = slot1;
         this.slot2 = slot2;
-        this.type = type;
     }
 }
 
