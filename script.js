@@ -20,13 +20,21 @@ function generateNumber() {
     return Math.floor((Math.random() * 2) + 1);
 };
 
+function generateMutation() {
+    return Math.floor((Math.random() * 10) + 1);
+;}
+
 function generateColorSlots(parent1, parent2) {
     
     const colorChance1 = generateNumber();
-    const colorSlot1 = colorChance1 === 1 ? parent1.colorDna.slot1 : parent1.colorDna.slot2
+    let colorSlot1 = colorChance1 === 1 ? parent1.colorDna.slot1 : parent1.colorDna.slot2;
+
+    if (generateMutation() === 10) {colorSlot1 = "green"};
 
     const colorChance2 = generateNumber();
-    const colorSlot2 = colorChance2 === 1 ? parent2.colorDna.slot1 : parent2.colorDna.slot2
+    let colorSlot2 = colorChance2 === 1 ? parent2.colorDna.slot1 : parent2.colorDna.slot2
+
+    if (generateMutation() === 10) {colorSlot2 = "green"};
 
     return new Color(colorSlot1, colorSlot2)
 };
@@ -60,12 +68,18 @@ const numberOne = document.querySelector(".first-true-child");
 
 function insertChild(child) {
     numberOne.innerText = child.name;
-    if (child.colorDna.slot1 === child.colorDna.domColor || child.colorDna.slot2 === child.colorDna.domColor) {
+
+    // color check
+    if (child.colorDna.slot1 === "green" && child.colorDna.slot2 === "green") {
+        numberOne.classList.add("color-special")
+    }
+    else if (child.colorDna.slot1 === child.colorDna.domColor || child.colorDna.slot2 === child.colorDna.domColor) {
     numberOne.classList.add("color-dom")
     }
     else {
         numberOne.classList.add("color-rec")
     }
+    // border check
     if (child.borderDna.slot1 === child.borderDna.domBorder || child.borderDna.slot2 === child.borderDna.domBorder) {
         return
     }
