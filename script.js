@@ -86,6 +86,18 @@ function insertChild(child) {
     else {
         numberOne.classList.add("border-rec")
     }
-}
+};
 
 insertChild(turdBoy);
+
+// function to generate elements
+
+function genOne() {
+    const firstUl = document.getElementById("g1-ul-1")
+    const firsttUl2 = document.getElementById("g1-ul-2")
+
+    firstUl.insertAdjacentHTML("afterend", "<li>Hello!</li>");
+    firsttUl2.insertAdjacentHTML("afterend", "<li>Bye!</li>");
+};
+
+genOne();

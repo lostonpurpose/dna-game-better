@@ -4,6 +4,29 @@ body {
 
 h1 {
     text-align: center;
+    margin: 0;
+}
+
+hr {
+    margin: 0;
+}
+
+.genOne {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+ul {
+    padding: 0;
+    /* margin-left: 24px; */
+    margin-right: 24px;
+}
+
+li {
+    font-size: 30px;
+    list-style-type: none;
+
 }
 
 .color-dom {
