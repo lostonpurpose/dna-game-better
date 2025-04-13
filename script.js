@@ -29,8 +29,8 @@ function generateSlots(parent1, parent2) {
 };
 
 
-const abel = new Element("Abel", generateSlots(adam, eve))
-const leia = new Element("Abel", generateSlots(adam, eve))
+const abel = new Element("Abel", generateSlots(adam, eve));
+const leia = new Element("Abel", generateSlots(adam, eve));
 
 
 abel.checkDna();
@@ -39,3 +39,18 @@ leia.checkDna();
 const turdBoy = new Element("Turd Boy", generateSlots(abel, leia));
 
 turdBoy.checkDna();
+
+const numberOne = document.querySelector(".first-true-child");
+
+
+function insertChild(child) {
+    numberOne.innerText = child.name;
+    if (child.colorDna.slot1 === "blue" || child.colorDna.slot2 === "blue") {
+    numberOne.classList.add("color-dom")
+    }
+    else {
+        numberOne.classList.add("color-rec")
+    }
+}
+
+insertChild(turdBoy);
