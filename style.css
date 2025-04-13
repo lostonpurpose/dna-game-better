@@ -5,3 +5,7 @@
 .color-rec {
     color: yellow;
 }
+
+.border-rec {
+    border: 1px solid black;
+}

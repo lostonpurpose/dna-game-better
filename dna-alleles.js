@@ -7,3 +7,11 @@ export class Color extends Dna {
         this.domColor = "blue";
     }
 }
+
+export class Border extends Dna {
+
+    constructor(slot1, slot2, domBorder) {
+        super(slot1, slot2);
+        this.domBorder = "noBorder"
+    }
+}
