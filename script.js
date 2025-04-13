@@ -69,8 +69,6 @@ const numberOne = document.querySelector(".first-true-child");
 function insertNumberOne(child) {
     numberOne.innerText = child.name;
 
-    
-
     // creates head
     numberOne.insertAdjacentHTML("afterend", `<div class="${child.name}"></div>`);
 
@@ -80,16 +78,29 @@ function insertNumberOne(child) {
     facehuh.insertAdjacentHTML("beforeend", `<div class="${child.name}-eye1"></div>`);
     facehuh.insertAdjacentHTML("beforeend", `<div class="${child.name}-eye2"></div>`);
 
+    // creates mouth
+    facehuh.insertAdjacentHTML("beforeend", `<div class="${child.name}-mouth"></div>`);
+
+    const eye1 = document.querySelector(`.${child.name}-eye1`);
+    const eye2 = document.querySelector(`.${child.name}-eye2`);
+
+
 
     // color check
     if (child.colorDna.slot1 === "green" && child.colorDna.slot2 === "green") {
-        numberOne.classList.add("color-special")
+        numberOne.classList.add("color-special");
+        eye1.style.backgroundColor = 'green';
+        eye2.style.backgroundColor = 'green';
     }
     else if (child.colorDna.slot1 === child.colorDna.domColor || child.colorDna.slot2 === child.colorDna.domColor) {
-    numberOne.classList.add("color-dom")
+        numberOne.classList.add("color-dom");
+        eye1.style.backgroundColor = 'blue';
+        eye2.style.backgroundColor = 'blue';
     }
     else {
-        numberOne.classList.add("color-rec")
+        numberOne.classList.add("color-rec");
+        eye1.style.backgroundColor = 'yellow';
+        eye2.style.backgroundColor = 'yellow';
     }
     // border check
     if (child.borderDna.slot1 === child.borderDna.domBorder || child.borderDna.slot2 === child.borderDna.domBorder) {
