@@ -2,11 +2,11 @@ import { Color } from "./dna-alleles.js";
 import { Border } from "./dna-alleles.js";
 import { Element } from "./element.js";
 
-const colorDom = new Color("brown", "brown");
-const colorRec = new Color("blue", "blue");
+const colorDom = new Color("blue", "blue");
+const colorRec = new Color("yellow", "yellow");
 
-const borderDom = new Border("round", "round");
-const borderRec = new Border("noRound", "noRound");
+const borderDom = new Border("noBorder", "noBorder");
+const borderRec = new Border("Border", "Border");
 
 
 // generate OG generation
@@ -94,13 +94,13 @@ function insertNumberOne(child) {
     }
     else if (child.colorDna.slot1 === child.colorDna.domColor || child.colorDna.slot2 === child.colorDna.domColor) {
         numberOne.classList.add("color-dom");
-        eye1.style.backgroundColor = 'brown';
-        eye2.style.backgroundColor = 'brown';
+        eye1.style.backgroundColor = 'blue';
+        eye2.style.backgroundColor = 'blue';
     }
     else {
         numberOne.classList.add("color-rec");
-        eye1.style.backgroundColor = 'lightblue';
-        eye2.style.backgroundColor = 'lightblue';
+        eye1.style.backgroundColor = 'yellow';
+        eye2.style.backgroundColor = 'yellow';
     }
     // border check
     if (child.borderDna.slot1 === child.borderDna.domBorder || child.borderDna.slot2 === child.borderDna.domBorder) {

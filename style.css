@@ -30,15 +30,15 @@ li {
 }
 
 .color-dom {
-    color: blue;
+    color: rgb(150, 41, 41);
 }
 
 .color-rec {
-    color: yellow;
+    color: lightblue;
 }
 
 .color-special {
-    color: green;
+    color: rgb(2, 193, 2);
 }
 
 .border-rec {
@@ -98,4 +98,35 @@ li {
 
 .face {
     display: flex;
+}
+
+.gen-one, .gen-two, .gen-three {
+    display: flex;
+    justify-content: center;
+}
+
+.gen-one-face {
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+}
+
+.gen-two-face {
+    height: 80px;
+    width: 80px;
+    border: 2px solid black;
+}
+
+.gen-three-face {
+    height: 70px;
+    width: 70px;
+    border: 2px solid black;
+}
+
+spacer {
+    width: 40px;
+}
+
+small-spacer {
+    width: 10px;
 }
