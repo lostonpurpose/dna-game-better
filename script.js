@@ -201,7 +201,8 @@ childGenerator(secondGens, secondGens2, secondUl, secondUl2)
 
 const og = document.querySelector(".the-og");
 
-// this creates the first two for now, tim and eric
+
+// this creates the first two for now
 function insertFaces(child) {
     og.innerText = child.name;
 
@@ -229,7 +230,6 @@ function insertFaces(child) {
         position: relative;`
     }
 
-
     // creates eyes
     newFace.insertAdjacentHTML("beforeend", `<div class="${child.name}-eye1"></div>`);
     newFace.insertAdjacentHTML("beforeend", `<div class="${child.name}-eye2"></div>`);
@@ -254,6 +254,34 @@ function insertFaces(child) {
     border-radius: 50%;
     position: absolute;
     margin-left: 58px;`
+
+    // creates pupils
+    newFace.insertAdjacentHTML("beforeend", `<div class="${child.name}-pupil1"></div>`);
+    newFace.insertAdjacentHTML("beforeend", `<div class="${child.name}-pupil2"></div>`);
+    const pupil1 = document.querySelector(`.${child.name}-pupil1`);
+    const pupil2 = document.querySelector(`.${child.name}-pupil2`);
+
+    pupil1.style.cssText = `height: 8px;
+    width: 8px;
+    margin-top: 41px;
+    margin-bottom: 12px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 26px;
+    background-color: black`
+
+    pupil2.style.cssText = `height: 8px;
+    width: 8px;
+    margin-top: 41px;
+    margin-bottom: 12px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 65px;
+    background-color: black`
+
+
 
     // creates mouth
     newFace.insertAdjacentHTML("beforeend", `<div class="${child.name}-mouth"></div>`);
@@ -287,4 +315,6 @@ function insertFaces(child) {
     
 };
 
-insertFaces(asshat);
+firstGens.forEach(kid => {
+    return insertFaces(kid);
+});
