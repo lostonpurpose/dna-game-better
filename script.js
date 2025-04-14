@@ -177,6 +177,7 @@ const secondUl2 = document.getElementById("g2-ul-2")
 
 
 // function to generate child elements
+// these are just text
 function childGenerator(firstGens, firstGens2, ul1, ul2) {
     
 
@@ -206,16 +207,27 @@ function insertFaces(child) {
 
     // creates head
     og.insertAdjacentHTML("beforeend", `<div class="${child.name}"></div>`);
-
     const newFace = document.querySelector(`.${child.name}`);
 
-    newFace.style.cssText = `height: 100px; 
-    width: 100px;
-    margin-top: 12px;
-    margin-bottom: 12px;
-    border: 1px solid black;
-    border-radius: 50%;
-    position: relative;`
+    // border / head-shape check
+    if (child.borderDna.slot1 === child.borderDna.domBorder || child.borderDna.slot2 === child.borderDna.domBorder) {
+        newFace.style.cssText = `height: 100px; 
+        width: 100px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        border: 2px solid black;
+        border-radius: 50%;
+        position: relative;`
+    }
+    else {
+        newFace.style.cssText = `height: 100px; 
+        width: 100px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        border: 2px solid black;
+        border-radius: 30px;
+        position: relative;`
+    }
 
 
     // creates eyes
@@ -271,14 +283,8 @@ function insertFaces(child) {
         eye1.style.backgroundColor = 'lightblue';
         eye2.style.backgroundColor = 'lightblue';
     }
-    // border check
-    if (child.borderDna.slot1 === child.borderDna.domBorder || child.borderDna.slot2 === child.borderDna.domBorder) {
-        return
-    }
-    else {
-        og.classList.add("border-rec")
-    }
+
     
 };
 
-insertFaces(tim);
+insertFaces(asshat);
