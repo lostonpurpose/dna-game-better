@@ -52,14 +52,14 @@ function generateBorderSlots(parent1, parent2) {
 
 
 // generate first true generation
-const abel = new Element("Abel", generateColorSlots(adam, eve), generateBorderSlots(adam, eve));
-const leia = new Element("Abel", generateColorSlots(adam, eve), generateBorderSlots(adam, eve));
+const tim = new Element("Tim", generateColorSlots(adam, eve), generateBorderSlots(adam, eve));
+const eric = new Element("Eric", generateColorSlots(adam, eve), generateBorderSlots(adam, eve));
 
 
-// abel.checkDna();
-// leia.checkDna();
+// tim.checkDna();
+// eric.checkDna();
 
-const turdBoy = new Element("TurdBoy", generateColorSlots(abel, leia), generateBorderSlots(abel, leia));
+const turdBoy = new Element("TurdBoy", generateColorSlots(tim, eric), generateBorderSlots(tim, eric));
 
 turdBoy.checkDna();
 
@@ -113,6 +113,8 @@ function insertNumberOne(child) {
 
 insertNumberOne(turdBoy);
 
+// turd boy end
+
 
 function insertChild(element) {
     const currentItem = document.querySelector(`.${element.name}`);
@@ -129,6 +131,12 @@ function insertChild(element) {
     // border check
     if (element.borderDna.slot1 === element.borderDna.domBorder || element.borderDna.slot2 === element.borderDna.domBorder) {
         return
+
+        // probably need to add the border-dom here since they start as squa/res
+        //
+        //
+        //
+        //
     }
     else {
         currentItem.classList.add("border-rec")
@@ -137,11 +145,11 @@ function insertChild(element) {
 
 
 // first true generation
-const diarrhea = new Element("diarrhea", generateColorSlots(abel, leia), generateBorderSlots(abel, leia));
-const poopy = new Element("poopy", generateColorSlots(abel, leia), generateBorderSlots(abel, leia));
+const diarrhea = new Element("diarrhea", generateColorSlots(tim, eric), generateBorderSlots(tim, eric));
+const poopy = new Element("poopy", generateColorSlots(tim, eric), generateBorderSlots(tim, eric));
 
-const asshat = new Element("asshat", generateColorSlots(abel, leia), generateBorderSlots(abel, leia));
-const farquar = new Element("farquar", generateColorSlots(abel, leia), generateBorderSlots(abel, leia));
+const asshat = new Element("asshat", generateColorSlots(tim, eric), generateBorderSlots(tim, eric));
+const farquar = new Element("farquar", generateColorSlots(tim, eric), generateBorderSlots(tim, eric));
 
 const firstGens = [diarrhea, poopy];
 const firstGens2 = [asshat, farquar];
@@ -186,3 +194,91 @@ function childGenerator(firstGens, firstGens2, ul1, ul2) {
 childGenerator(firstGens, firstGens2, firstUl, firstUl2);
 
 childGenerator(secondGens, secondGens2, secondUl, secondUl2)
+
+
+// creating faces func
+
+const og = document.querySelector(".the-og");
+
+// this creates the first two for now, tim and eric
+function insertFaces(child) {
+    og.innerText = child.name;
+
+    // creates head
+    og.insertAdjacentHTML("beforeend", `<div class="${child.name}"></div>`);
+
+    const newFace = document.querySelector(`.${child.name}`);
+
+    newFace.style.cssText = `height: 100px; 
+    width: 100px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: relative;`
+
+
+    // creates eyes
+    newFace.insertAdjacentHTML("beforeend", `<div class="${child.name}-eye1"></div>`);
+    newFace.insertAdjacentHTML("beforeend", `<div class="${child.name}-eye2"></div>`);
+
+    const eye1 = document.querySelector(`.${child.name}-eye1`);
+    const eye2 = document.querySelector(`.${child.name}-eye2`);
+
+    eye1.style.cssText = `height: 20px;
+    width: 20px;
+    margin-top: 35px;
+    margin-bottom: 12px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 20px;`
+
+    eye2.style.cssText = `height: 20px;
+    width: 20px;
+    margin-top: 35px;
+    margin-bottom: 12px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 58px;`
+
+    // creates mouth
+    newFace.insertAdjacentHTML("beforeend", `<div class="${child.name}-mouth"></div>`);
+    const mouth = document.querySelector(`.${child.name}-mouth`)
+    mouth.style.cssText = `height: 2px;
+    width: 20px;
+    margin-top: 74px;
+    margin-bottom: 12px;
+    border: 1px solid black;
+    background-color: black;
+    position: absolute;
+    margin-left: 39px;`
+
+    // color check
+    if (child.colorDna.slot1 === "green" && child.colorDna.slot2 === "green") {
+        og.classList.add("color-special");
+        eye1.style.backgroundColor = 'green';
+        eye2.style.backgroundColor = 'green';
+    }
+    else if (child.colorDna.slot1 === child.colorDna.domColor || child.colorDna.slot2 === child.colorDna.domColor) {
+        og.classList.add("color-dom");
+        eye1.style.backgroundColor = 'brown';
+        eye2.style.backgroundColor = 'brown';
+    }
+    else {
+        og.classList.add("color-rec");
+        eye1.style.backgroundColor = 'lightblue';
+        eye2.style.backgroundColor = 'lightblue';
+    }
+    // border check
+    if (child.borderDna.slot1 === child.borderDna.domBorder || child.borderDna.slot2 === child.borderDna.domBorder) {
+        return
+    }
+    else {
+        og.classList.add("border-rec")
+    }
+    
+};
+
+insertFaces(tim);
