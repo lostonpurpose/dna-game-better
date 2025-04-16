@@ -105,6 +105,11 @@ li {
     justify-content: center;
 }
 
+/* .the-og {
+    display: flex;
+    justify-content: center;
+} */
+
 .gen-one-face {
     height: 100px;
     width: 100px;
@@ -131,8 +136,8 @@ small-spacer {
     width: 10px;
 }
 
-.the-og {
+/* .the-og {
     display: flex;
     width: 500px;
     height: 300px;
-}
+} */

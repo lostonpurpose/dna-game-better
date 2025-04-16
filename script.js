@@ -69,52 +69,52 @@ turdBoy.checkDna();
 const numberOne = document.querySelector(".first-true-child");
 
 // this just creates Turd Boy, the original child
-function insertNumberOne(child) {
-    numberOne.innerText = child.name;
+// function insertNumberOne(child) {
+//     numberOne.innerText = child.name;
 
-    // creates head
-    numberOne.insertAdjacentHTML("afterend", `<div class="${child.name}"></div>`);
+//     // creates head
+//     numberOne.insertAdjacentHTML("afterend", `<div class="${child.name}"></div>`);
 
-    const facehuh = document.querySelector(`.${child.name}`);
+//     const facehuh = document.querySelector(`.${child.name}`);
 
-    // creates eyes
-    facehuh.insertAdjacentHTML("beforeend", `<div class="${child.name}-eye1"></div>`);
-    facehuh.insertAdjacentHTML("beforeend", `<div class="${child.name}-eye2"></div>`);
+//     // creates eyes
+//     facehuh.insertAdjacentHTML("beforeend", `<div class="${child.name}-eye1"></div>`);
+//     facehuh.insertAdjacentHTML("beforeend", `<div class="${child.name}-eye2"></div>`);
 
-    // creates mouth
-    facehuh.insertAdjacentHTML("beforeend", `<div class="${child.name}-mouth"></div>`);
+//     // creates mouth
+//     facehuh.insertAdjacentHTML("beforeend", `<div class="${child.name}-mouth"></div>`);
 
-    const eye1 = document.querySelector(`.${child.name}-eye1`);
-    const eye2 = document.querySelector(`.${child.name}-eye2`);
+//     const eye1 = document.querySelector(`.${child.name}-eye1`);
+//     const eye2 = document.querySelector(`.${child.name}-eye2`);
 
 
 
-    // color check
-    if (child.colorDna.slot1 === "green" && child.colorDna.slot2 === "green") {
-        numberOne.classList.add("color-special");
-        eye1.style.backgroundColor = 'green';
-        eye2.style.backgroundColor = 'green';
-    }
-    else if (child.colorDna.slot1 === child.colorDna.domColor || child.colorDna.slot2 === child.colorDna.domColor) {
-        numberOne.classList.add("color-dom");
-        eye1.style.backgroundColor = 'brown';
-        eye2.style.backgroundColor = 'brown';
-    }
-    else {
-        numberOne.classList.add("color-rec");
-        eye1.style.backgroundColor = 'lightblue';
-        eye2.style.backgroundColor = 'lightblue';
-    }
-    // border check
-    if (child.borderDna.slot1 === child.borderDna.domBorder || child.borderDna.slot2 === child.borderDna.domBorder) {
-        return
-    }
-    else {
-        numberOne.classList.add("border-rec")
-    }
-};
+//     // color check
+//     if (child.colorDna.slot1 === "green" && child.colorDna.slot2 === "green") {
+//         numberOne.classList.add("color-special");
+//         eye1.style.backgroundColor = 'green';
+//         eye2.style.backgroundColor = 'green';
+//     }
+//     else if (child.colorDna.slot1 === child.colorDna.domColor || child.colorDna.slot2 === child.colorDna.domColor) {
+//         numberOne.classList.add("color-dom");
+//         eye1.style.backgroundColor = 'brown';
+//         eye2.style.backgroundColor = 'brown';
+//     }
+//     else {
+//         numberOne.classList.add("color-rec");
+//         eye1.style.backgroundColor = 'lightblue';
+//         eye2.style.backgroundColor = 'lightblue';
+//     }
+//     // border check
+//     if (child.borderDna.slot1 === child.borderDna.domBorder || child.borderDna.slot2 === child.borderDna.domBorder) {
+//         return
+//     }
+//     else {
+//         numberOne.classList.add("border-rec")
+//     }
+// };
 
-insertNumberOne(turdBoy);
+// insertNumberOne(turdBoy);
 
 // turd boy end
 
