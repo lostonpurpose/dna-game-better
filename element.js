@@ -3,10 +3,12 @@ function capitalize(str) {
 }
 
 export class Element {
-    constructor(name, colorDna, borderDna) {
+    constructor(name, colorDna, borderDna, parent1 = null, parent2 = null) {
         this.name = name;
         this.colorDna = colorDna;
         this.borderDna = borderDna;
+        this.parent1 = parent1;
+        this.parent2 = parent2;
     }
 
 

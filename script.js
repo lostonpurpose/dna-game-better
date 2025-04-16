@@ -25,7 +25,7 @@ function generateMutation() {
     return Math.floor((Math.random() * 10) + 1);
 ;}
 
-function generateColorSlots(parent1, parent2) {
+export function generateColorSlots(parent1, parent2) {
     
     const colorChance1 = generateNumber();
     let colorSlot1 = colorChance1 === 1 ? parent1.colorDna.slot1 : parent1.colorDna.slot2;
@@ -146,11 +146,11 @@ const eric = new Element("Eric", generateColorSlots(adam, eve), generateBorderSl
 
 
 // first true generation
-const diarrhea = new Element("diarrhea", generateColorSlots(tim, eric), generateBorderSlots(tim, eric));
-const poopy = new Element("poopy", generateColorSlots(tim, eric), generateBorderSlots(tim, eric));
+const diarrhea = new Element("diarrhea", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), tim, eric);
+const poopy = new Element("poopy", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), tim, eric);
 
-const asshat = new Element("asshat", generateColorSlots(tim, eric), generateBorderSlots(tim, eric));
-const farquar = new Element("farquar", generateColorSlots(tim, eric), generateBorderSlots(tim, eric));
+const asshat = new Element("asshat", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), tim, eric);
+const farquar = new Element("farquar", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), tim, eric);
 
 const firstGens = [diarrhea, poopy, asshat, farquar];
 
@@ -159,30 +159,30 @@ const firstGens = [diarrhea, poopy, asshat, farquar];
 // end
 
 // second generation
-const dookie = new Element("dookie", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy));
-const pupcake = new Element("pupcake", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy));
-const sasquatch = new Element("sasquatch", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy));
-const titsmcgee = new Element("titsmcgee", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy));
-const craphole = new Element("craphole", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar));
-const weener = new Element("weener", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar));
-const buttstreaks = new Element("buttstreaks", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar));
-const fartty = new Element("fartty", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar));
+const dookie = new Element("dookie", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy), diarrhea, poopy);
+const pupcake = new Element("pupcake", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy), diarrhea, poopy);
+const sasquatch = new Element("sasquatch", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy), diarrhea, poopy);
+const titsmcgee = new Element("titsmcgee", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy), diarrhea, poopy);
+const craphole = new Element("craphole", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar), asshat, farquar);
+const weener = new Element("weener", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar), asshat, farquar);
+const buttstreaks = new Element("buttstreaks", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar), asshat, farquar);
+const fartty = new Element("fartty", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar), asshat, farquar);
 
 const secondGens = [dookie, pupcake, sasquatch, titsmcgee, craphole, weener, buttstreaks, fartty];
 
 // third generation
-const a1 = new Element("a1", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake));
-const a2 = new Element("a2", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake));
-const a3 = new Element("a3", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake));
-const a4 = new Element("a4", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee));
-const a5 = new Element("a5", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee));
-const a6 = new Element("a6", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee));
-const a7 = new Element("a7", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener));
-const a8 = new Element("a8", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener));
-const a9 = new Element("a9", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener));
-const a10 = new Element("a10", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty));
-const a11 = new Element("a11", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty));
-const a12 = new Element("a12", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty));
+const a1 = new Element("a1", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake), dookie, pupcake);
+const a2 = new Element("a2", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake), dookie, pupcake);
+const a3 = new Element("a3", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake), dookie, pupcake);
+const a4 = new Element("a4", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee), sasquatch, titsmcgee);
+const a5 = new Element("a5", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee), sasquatch, titsmcgee);
+const a6 = new Element("a6", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee), sasquatch, titsmcgee);
+const a7 = new Element("a7", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener), craphole, weener);
+const a8 = new Element("a8", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener), craphole, weener);
+const a9 = new Element("a9", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener), craphole, weener);
+const a10 = new Element("a10", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty), buttstreaks, fartty);
+const a11 = new Element("a11", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty), buttstreaks, fartty);
+const a12 = new Element("a12", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty), buttstreaks, fartty);
 
 const thirdGens = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12];
 
