@@ -103,12 +103,8 @@ li {
 .gen-one, .gen-two, .gen-three {
     display: flex;
     justify-content: center;
+    margin-top: 3rem;
 }
-
-/* .the-og {
-    display: flex;
-    justify-content: center;
-} */
 
 .gen-one-face {
     height: 100px;
@@ -135,9 +131,3 @@ spacer {
 small-spacer {
     width: 10px;
 }
-
-/* .the-og {
-    display: flex;
-    width: 500px;
-    height: 300px;
-} */

@@ -2,6 +2,7 @@
 
 export const og = document.querySelector(".gen-one");
 export const genTwo = document.querySelector(".gen-two");
+export const genThree = document.querySelector("gen-three");
 
 // export const generations = [og, genTwo];
 

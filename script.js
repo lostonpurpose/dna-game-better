@@ -1,9 +1,7 @@
-import { Color } from "./dna-alleles.js";
-import { Border } from "./dna-alleles.js";
+import { Color, Border } from "./dna-alleles.js";
 import { Element } from "./element.js";
 import insertFaces from "./face-create.js";
-import { og } from "./face-create.js";
-import { genTwo } from "./face-create.js";
+import { og, genTwo } from "./face-create.js";
 
 const colorDom = new Color("brown", "brown");
 const colorRec = new Color("blue", "blue");
@@ -62,11 +60,11 @@ const eric = new Element("Eric", generateColorSlots(adam, eve), generateBorderSl
 // tim.checkDna();
 // eric.checkDna();
 
-const turdBoy = new Element("TurdBoy", generateColorSlots(tim, eric), generateBorderSlots(tim, eric));
+// const turdBoy = new Element("TurdBoy", generateColorSlots(tim, eric), generateBorderSlots(tim, eric));
 
-turdBoy.checkDna();
+// turdBoy.checkDna();
 
-const numberOne = document.querySelector(".first-true-child");
+// const numberOne = document.querySelector(".first-true-child");
 
 // this just creates Turd Boy, the original child
 // function insertNumberOne(child) {
@@ -154,8 +152,7 @@ const poopy = new Element("poopy", generateColorSlots(tim, eric), generateBorder
 const asshat = new Element("asshat", generateColorSlots(tim, eric), generateBorderSlots(tim, eric));
 const farquar = new Element("farquar", generateColorSlots(tim, eric), generateBorderSlots(tim, eric));
 
-const firstGens = [diarrhea, poopy];
-const firstGens2 = [asshat, farquar];
+const firstGens = [diarrhea, poopy, asshat, farquar];
 
 const firstUl = document.getElementById("g1-ul-1")
 const firstUl2 = document.getElementById("g1-ul-2")
@@ -171,8 +168,7 @@ const weener = new Element("weener", generateColorSlots(asshat, farquar), genera
 const buttstreaks = new Element("buttstreaks", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar));
 const fartty = new Element("fartty", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar));
 
-const secondGens = [dookie, pupcake, sasquatch, titsmcgee, craphole];
-const secondGens2 = [weener, buttstreaks, fartty];
+const secondGens = [dookie, pupcake, sasquatch, titsmcgee, craphole, weener, buttstreaks, fartty];
 
 const secondUl = document.getElementById("g2-ul-1")
 const secondUl2 = document.getElementById("g2-ul-2")
@@ -208,4 +204,9 @@ firstGens.forEach(child => {
 // runs face gen for second generation
 secondGens.forEach(child => {
     return insertFaces(child, genTwo)
+});
+
+// runs face gen for second generation
+thirdGens.forEach(child => {
+    return insertFaces(child, genThree)
 });
