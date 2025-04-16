@@ -29,17 +29,17 @@ li {
 
 }
 
-.color-dom {
+/* .color-dom {
     color: rgb(150, 41, 41);
-}
+} */
 
-.color-rec {
+/* .color-rec {
     color: lightblue;
-}
+} */
 
-.color-special {
+/* .color-special {
     color: rgb(2, 193, 2);
-}
+} */
 
 .border-rec {
     border: 1px solid black;
@@ -130,4 +130,8 @@ spacer {
 
 small-spacer {
     width: 10px;
+}
+
+.face-name {
+    text-align: center;
 }

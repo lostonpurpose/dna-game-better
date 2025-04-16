@@ -7,7 +7,6 @@ export const genThree = document.querySelector("gen-three");
 // export const generations = [og, genTwo];
 
 export default function insertFaces(child, generation) {
-    generation.insertAdjacentText("beforeend", child.name);
 
 
     // creates new div
@@ -15,10 +14,12 @@ export default function insertFaces(child, generation) {
     generation.insertAdjacentHTML("beforeend", `<div class="${child.name}-container"></div>`);
     const headContainer = document.querySelector(`.${child.name}-container`)
 
-
     // creates head
     headContainer.insertAdjacentHTML("beforeend", `<div class="${child.name}"></div>`);
     const newFace = document.querySelector(`.${child.name}`);
+
+    // adds name for each face
+    newFace.insertAdjacentHTML("afterend", `<p class="face-name">${child.name}</p>`);
 
     // border / head-shape check
     if (child.borderDna.slot1 === child.borderDna.domBorder || child.borderDna.slot2 === child.borderDna.domBorder) {
