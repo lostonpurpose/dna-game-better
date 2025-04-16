@@ -3,6 +3,7 @@ import { Border } from "./dna-alleles.js";
 import { Element } from "./element.js";
 import insertFaces from "./face-create.js";
 import { og } from "./face-create.js";
+import { genTwo } from "./face-create.js";
 
 const colorDom = new Color("brown", "brown");
 const colorRec = new Color("blue", "blue");
@@ -180,26 +181,31 @@ const secondUl2 = document.getElementById("g2-ul-2")
 
 // function to generate child elements
 // these are just text
-function childGenerator(firstGens, firstGens2, ul1, ul2) {
+// function childGenerator(firstGens, firstGens2, ul1, ul2) {
     
 
-    firstGens.forEach(element => {
-        ul1.insertAdjacentHTML("beforeend", `<li class="${element.name}">${element.name}</li>`);
-        insertChild(element);
-    });
+//     firstGens.forEach(element => {
+//         ul1.insertAdjacentHTML("beforeend", `<li class="${element.name}">${element.name}</li>`);
+//         insertChild(element);
+//     });
     
-    firstGens2.forEach(element => {
-        ul2.insertAdjacentHTML("beforeend", `<li class="${element.name}">${element.name}</li>`);
-        insertChild(element);
-    });
-};
+//     firstGens2.forEach(element => {
+//         ul2.insertAdjacentHTML("beforeend", `<li class="${element.name}">${element.name}</li>`);
+//         insertChild(element);
+//     });
+// };
 
 // these are for the words only
-childGenerator(firstGens, firstGens2, firstUl, firstUl2);
-childGenerator(secondGens, secondGens2, secondUl, secondUl2)
+// childGenerator(firstGens, firstGens2, firstUl, firstUl2);
+// childGenerator(secondGens, secondGens2, secondUl, secondUl2)
 
 
 // runs face gen for first generation
 firstGens.forEach(child => {
     return insertFaces(child, og);
+});
+
+// runs face gen for second generation
+secondGens.forEach(child => {
+    return insertFaces(child, genTwo)
 });

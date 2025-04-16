@@ -1,7 +1,7 @@
 // creating faces func
 
 export const og = document.querySelector(".the-og");
-const genTwo = document.querySelector(".gen-two");
+export const genTwo = document.querySelector(".gen-two");
 
 // export const generations = [og, genTwo];
 
