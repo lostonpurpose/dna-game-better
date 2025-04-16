@@ -15,7 +15,32 @@ export default function insertFaces(child, generation) {
 
     // creates head
     headContainer.insertAdjacentHTML("beforeend", `<div class="${child.name}"></div>`);
-    const newFace = document.querySelector(`.${child.name}`);
+    const newFace = headContainer.querySelector(`.${child.name}`);
+    
+    // tooltip with DNA 
+    // HTML structure for tooltip
+    const tooltip = document.createElement('div');
+    tooltip.classList.add('tooltip');
+    tooltip.style.display = 'none'; // Hidden by default
+    document.body.appendChild(tooltip);
+
+    // On hover, show tooltip
+    newFace.addEventListener('mouseenter', () => {
+        tooltip.style.display = 'block';
+        tooltip.innerHTML = `Name: ${child.name}<br>Border: ${child.borderDna.slot1}, ${child.borderDna.slot2}<br>Color: ${child.colorDna.slot1}, ${child.colorDna.slot2}`;
+        tooltip.style.left = `${newFace.getBoundingClientRect().left}px`; // position the tooltip
+        tooltip.style.top = `${newFace.getBoundingClientRect().top + newFace.offsetHeight + 5}px`;
+        tooltip.classList.add('show');
+    });
+
+    // On mouse leave, hide tooltip
+    newFace.addEventListener('mouseleave', () => {
+        tooltip.classList.remove('show');
+        setTimeout(() => {
+            tooltip.style.display = 'none';
+        }, 200); // Allow fade-out before hiding completely
+    });
+    // end tooltip
 
     // adds name for each face
     newFace.insertAdjacentHTML("afterend", `<p class="face-name">${child.name}</p>`);

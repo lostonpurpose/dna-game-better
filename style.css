@@ -135,3 +135,28 @@ small-spacer {
 .face-name {
     text-align: center;
 }
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 12px;
+    max-width: 200px;
+    pointer-events: none; /* Prevents the tooltip from blocking mouse events */
+}
+
+.tooltip {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.tooltip.show {
+    opacity: 1;
+}
+
+.face:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.6); /* Green glow */
+    cursor: pointer;
+}

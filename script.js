@@ -239,7 +239,7 @@ thirdGens.forEach((child, index) => {
     insertFaces(child, genThree)
 
     // magically adds a spacer element after 
-    if ((index + 1) % 2 === 0) {
+    if ((index + 1) % 3 === 0) {
         const faceContainer = document.querySelector(`.${child.name}-container`);
         faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
     }
