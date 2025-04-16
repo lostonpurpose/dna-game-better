@@ -1,17 +1,17 @@
 // creating faces func
 
-export const og = document.querySelector(".the-og");
+const og = document.querySelector(".the-og");
 const genTwo = document.querySelector(".gen-two");
 
-// export const generations = [og, genTwo];
+const generations = [og, genTwo];
 
-export default function insertFaces(child, generation) {
-    generation.insertAdjacentText("beforeend", child.name);
+export default function insertFaces(child) {
+    og.insertAdjacentText("beforeend", child.name);
 
 
     // creates new div
 
-    generation.insertAdjacentHTML("beforeend", `<div class="${child.name}-container"></div>`);
+    og.insertAdjacentHTML("beforeend", `<div class="${child.name}-container"></div>`);
     const headContainer = document.querySelector(`.${child.name}-container`)
 
 

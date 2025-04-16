@@ -2,6 +2,7 @@ import { Color } from "./dna-alleles.js";
 import { Border } from "./dna-alleles.js";
 import { Element } from "./element.js";
 import insertFaces from "./face-create.js";
+import { og } from "./face-create.js";
 
 const colorDom = new Color("brown", "brown");
 const colorRec = new Color("blue", "blue");
@@ -193,13 +194,12 @@ function childGenerator(firstGens, firstGens2, ul1, ul2) {
     });
 };
 
+// these are for the words only
 childGenerator(firstGens, firstGens2, firstUl, firstUl2);
-
 childGenerator(secondGens, secondGens2, secondUl, secondUl2)
 
 
-
-
-firstGens.forEach(kid => {
-    return insertFaces(kid);
+// runs face gen for first generation
+firstGens.forEach(child => {
+    return insertFaces(child, og);
 });
