@@ -1,7 +1,7 @@
 import { Color, Border } from "./dna-alleles.js";
 import { Element } from "./element.js";
 import insertFaces from "./face-create.js";
-import { og, genTwo } from "./face-create.js";
+import { og, genTwo, genThree } from "./face-create.js";
 
 const colorDom = new Color("brown", "brown");
 const colorRec = new Color("blue", "blue");
@@ -117,32 +117,32 @@ const eric = new Element("Eric", generateColorSlots(adam, eve), generateBorderSl
 // turd boy end
 
 
-function insertChild(element) {
-    const currentItem = document.querySelector(`.${element.name}`);
-    // color check
-    if (element.colorDna.slot1 === "green" && element.colorDna.slot2 === "green") {
-        currentItem.classList.add("color-special")
-    }
-    else if (element.colorDna.slot1 === element.colorDna.domColor || element.colorDna.slot2 === element.colorDna.domColor) {
-    currentItem.classList.add("color-dom")
-    }
-    else {
-        currentItem.classList.add("color-rec")
-    }
-    // border check
-    if (element.borderDna.slot1 === element.borderDna.domBorder || element.borderDna.slot2 === element.borderDna.domBorder) {
-        return
+// function insertChild(element) {
+//     const currentItem = document.querySelector(`.${element.name}`);
+//     // color check
+//     if (element.colorDna.slot1 === "green" && element.colorDna.slot2 === "green") {
+//         currentItem.classList.add("color-special")
+//     }
+//     else if (element.colorDna.slot1 === element.colorDna.domColor || element.colorDna.slot2 === element.colorDna.domColor) {
+//     currentItem.classList.add("color-dom")
+//     }
+//     else {
+//         currentItem.classList.add("color-rec")
+//     }
+//     // border check
+//     if (element.borderDna.slot1 === element.borderDna.domBorder || element.borderDna.slot2 === element.borderDna.domBorder) {
+//         return
 
-        // probably need to add the border-dom here since they start as squa/res
-        //
-        //
-        //
-        //
-    }
-    else {
-        currentItem.classList.add("border-rec")
-    }
-};
+//         // probably need to add the border-dom here since they start as squa/res
+//         //
+//         //
+//         //
+//         //
+//     }
+//     else {
+//         currentItem.classList.add("border-rec")
+//     }
+// };
 
 
 // first true generation
@@ -154,8 +154,8 @@ const farquar = new Element("farquar", generateColorSlots(tim, eric), generateBo
 
 const firstGens = [diarrhea, poopy, asshat, farquar];
 
-const firstUl = document.getElementById("g1-ul-1")
-const firstUl2 = document.getElementById("g1-ul-2")
+// const firstUl = document.getElementById("g1-ul-1")
+// const firstUl2 = document.getElementById("g1-ul-2")
 // end
 
 // second generation
@@ -170,8 +170,24 @@ const fartty = new Element("fartty", generateColorSlots(asshat, farquar), genera
 
 const secondGens = [dookie, pupcake, sasquatch, titsmcgee, craphole, weener, buttstreaks, fartty];
 
-const secondUl = document.getElementById("g2-ul-1")
-const secondUl2 = document.getElementById("g2-ul-2")
+// third generation
+const a1 = new Element("a1", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake));
+const a2 = new Element("a2", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake));
+const a3 = new Element("a3", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake));
+const a4 = new Element("a4", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee));
+const a5 = new Element("a5", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee));
+const a6 = new Element("a6", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee));
+const a7 = new Element("a7", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener));
+const a8 = new Element("a8", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener));
+const a9 = new Element("a9", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener));
+const a10 = new Element("a10", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty));
+const a11 = new Element("a11", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty));
+const a12 = new Element("a12", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty));
+
+const thirdGens = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12];
+
+// const secondUl = document.getElementById("g2-ul-1")
+// const secondUl2 = document.getElementById("g2-ul-2")
 // end
 
 
@@ -197,16 +213,34 @@ const secondUl2 = document.getElementById("g2-ul-2")
 
 
 // runs face gen for first generation
-firstGens.forEach(child => {
-    return insertFaces(child, og);
+firstGens.forEach((child, index) => {
+    insertFaces(child, og);
+
+    // magically adds a spacer element after 
+    if ((index + 1) % 2 === 0) {
+        const faceContainer = document.querySelector(`.${child.name}-container`);
+        faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
+    }
 });
 
 // runs face gen for second generation
-secondGens.forEach(child => {
-    return insertFaces(child, genTwo)
+secondGens.forEach((child, index) => {
+    insertFaces(child, genTwo)
+
+    // magically adds a spacer element after 
+    if ((index + 1) % 2 === 0) {
+        const faceContainer = document.querySelector(`.${child.name}-container`);
+        faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
+    }
 });
 
-// runs face gen for second generation
-thirdGens.forEach(child => {
-    return insertFaces(child, genThree)
+// runs face gen for third generation
+thirdGens.forEach((child, index) => {
+    insertFaces(child, genThree)
+
+    // magically adds a spacer element after 
+    if ((index + 1) % 2 === 0) {
+        const faceContainer = document.querySelector(`.${child.name}-container`);
+        faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
+    }
 });

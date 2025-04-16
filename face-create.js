@@ -2,12 +2,11 @@
 
 export const og = document.querySelector(".gen-one");
 export const genTwo = document.querySelector(".gen-two");
-export const genThree = document.querySelector("gen-three");
+export const genThree = document.querySelector(".gen-three");
 
 // export const generations = [og, genTwo];
 
 export default function insertFaces(child, generation) {
-
 
     // creates new div
 
@@ -25,8 +24,7 @@ export default function insertFaces(child, generation) {
     if (child.borderDna.slot1 === child.borderDna.domBorder || child.borderDna.slot2 === child.borderDna.domBorder) {
         newFace.style.cssText = `height: 100px; 
         width: 100px;
-        margin-top: 12px;
-        margin-bottom: 12px;
+        margin: 12px 5px;
         border: 2px solid black;
         border-radius: 50%;
         position: relative;`
@@ -34,8 +32,7 @@ export default function insertFaces(child, generation) {
     else {
         newFace.style.cssText = `height: 100px; 
         width: 100px;
-        margin-top: 12px;
-        margin-bottom: 12px;
+        margin: 12px 5px;
         border: 2px solid black;
         border-radius: 30px;
         position: relative;`
@@ -122,6 +119,5 @@ export default function insertFaces(child, generation) {
         eye1.style.backgroundColor = 'lightblue';
         eye2.style.backgroundColor = 'lightblue';
     }
-
     
 };
