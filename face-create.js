@@ -27,7 +27,7 @@ export default function insertFaces(child, generation) {
     // On hover, show tooltip
     newFace.addEventListener('mouseenter', () => {
         tooltip.style.display = 'block';
-        tooltip.innerHTML = `Parents: ${child.parent1.name} :: ${child.parent2.name}<br>Border: ${child.borderDna.slot1}, ${child.borderDna.slot2}<br>Color: ${child.colorDna.slot1}, ${child.colorDna.slot2}<br>Hair: ${child.hairDna.slot1}, ${child.hairDna.slot2}`;
+        tooltip.innerHTML = `Parents: ${child.parent1.name} :: ${child.parent2.name}<br><br>Border: ${child.borderDna.slot1}, ${child.borderDna.slot2}<br><br>Color: ${child.colorDna.slot1}, ${child.colorDna.slot2}<br><br>Hair: ${child.hairDna.slot1}, ${child.hairDna.slot2}`;
         tooltip.style.left = `${newFace.getBoundingClientRect().left}px`; // position the tooltip
         tooltip.style.top = `${newFace.getBoundingClientRect().top + newFace.offsetHeight + 5}px`;
         tooltip.classList.add('show');
@@ -72,7 +72,7 @@ export default function insertFaces(child, generation) {
     const eye2 = document.querySelector(`.${child.name}-eye2`);
 
     eye1.style.cssText = `height: 20px;
-    width: 20px;
+    width: 24px;
     margin-top: 35px;
     margin-bottom: 12px;
     border: 1px solid black;
@@ -81,7 +81,7 @@ export default function insertFaces(child, generation) {
     margin-left: 20px;`
 
     eye2.style.cssText = `height: 20px;
-    width: 20px;
+    width: 24px;
     margin-top: 35px;
     margin-bottom: 12px;
     border: 1px solid black;
@@ -95,24 +95,24 @@ export default function insertFaces(child, generation) {
     const pupil1 = document.querySelector(`.${child.name}-pupil1`);
     const pupil2 = document.querySelector(`.${child.name}-pupil2`);
 
-    pupil1.style.cssText = `height: 8px;
-    width: 8px;
-    margin-top: 41px;
+    pupil1.style.cssText = `height: 6px;
+    width: 6px;
+    margin-top: 42px;
     margin-bottom: 12px;
     border: 1px solid black;
     border-radius: 50%;
     position: absolute;
-    margin-left: 26px;
+    margin-left: 29px;
     background-color: black`
 
-    pupil2.style.cssText = `height: 8px;
-    width: 8px;
-    margin-top: 41px;
+    pupil2.style.cssText = `height: 6px;
+    width: 6px;
+    margin-top: 42px;
     margin-bottom: 12px;
     border: 1px solid black;
     border-radius: 50%;
     position: absolute;
-    margin-left: 65px;
+    margin-left: 67px;
     background-color: black`
 
     // creates mouth
@@ -130,16 +130,15 @@ export default function insertFaces(child, generation) {
     // creates hair
     newFace.insertAdjacentHTML("beforeend", `<div class="${child.name}-hair"></div>`);
     const hair = document.querySelector(`.${child.name}-hair`)
-    hair.style.cssText = `height: 2px;
-    width: 80px;
-    height: 25px;
+    hair.style.cssText = `width: 92px;
+    height: 30px;
     margin-top: -5px;
     margin-bottom: 12px;
     border: 1px solid black;
-    border-radius: 50px 50px 9px 9px;
+    border-radius: 90px 90px 9px 9px;
     background-color: none;
     position: absolute;
-    margin-left: 9px;`
+    margin-left: 3px;`
 
     // color check
     if (child.colorDna.slot1 === "green" && child.colorDna.slot2 === "green") {

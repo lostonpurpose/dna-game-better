@@ -7,7 +7,7 @@ const colorDom = new Color("brown", "brown");
 const colorRec = new Color("blue", "blue");
 
 const borderDom = new Border("round", "round");
-const borderRec = new Border("noRound", "noRound");
+const borderRec = new Border("square", "square");
 
 const hairDom = new Hair("black", "black");
 const hairRec = new Hair("blonde", "blonde")
@@ -176,14 +176,14 @@ const firstGens = [diarrhea, poopy, asshat, farquar];
 // end
 
 // second generation
-const dookie = new Element("dookie", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy), diarrhea, poopy);
-const pupcake = new Element("pupcake", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy), diarrhea, poopy);
-const sasquatch = new Element("sasquatch", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy), diarrhea, poopy);
-const titsmcgee = new Element("titsmcgee", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy), diarrhea, poopy);
-const craphole = new Element("craphole", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar), asshat, farquar);
-const weener = new Element("weener", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar), asshat, farquar);
-const buttstreaks = new Element("buttstreaks", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar), asshat, farquar);
-const fartty = new Element("fartty", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar), asshat, farquar);
+const dookie = new Element("dookie", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy), generateHairSlots(diarrhea, poopy), diarrhea, poopy);
+const pupcake = new Element("pupcake", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy), generateHairSlots(diarrhea, poopy), diarrhea, poopy);
+const sasquatch = new Element("sasquatch", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy), generateHairSlots(diarrhea, poopy), diarrhea, poopy);
+const titsmcgee = new Element("titsmcgee", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy), generateHairSlots(diarrhea, poopy), diarrhea, poopy);
+const craphole = new Element("craphole", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar), generateHairSlots(asshat, farquar), asshat, farquar);
+const weener = new Element("weener", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar), generateHairSlots(asshat, farquar), asshat, farquar);
+const buttstreaks = new Element("buttstreaks", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar), generateHairSlots(asshat, farquar), asshat, farquar);
+const fartty = new Element("fartty", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar), generateHairSlots(asshat, farquar), asshat, farquar);
 
 const secondGens = [dookie, pupcake, sasquatch, titsmcgee, craphole, weener, buttstreaks, fartty];
 
