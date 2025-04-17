@@ -10,7 +10,7 @@ const borderDom = new Border("round", "round");
 const borderRec = new Border("square", "square");
 
 const hairDom = new Hair("black", "black");
-const hairRec = new Hair("blonde", "blonde")
+const hairRec = new Hair("brown", "brown")
 
 
 // generate OG generation
@@ -58,12 +58,12 @@ function generateHairSlots(parent1, parent2) {
     const hairChance1 = generateNumber();
     let hairSlot1 = hairChance1 === 1 ? parent1.hairDna.slot1 : parent1.hairDna.slot2;
 
-    if (generateMutation() === 10) {hairSlot1 = "brown"};
+    if (generateMutation() === 10) {hairSlot1 = "blonde"};
 
     const hairChance2 = generateNumber();
     let hairSlot2 = hairChance2 === 1 ? parent2.hairDna.slot1 : parent2.hairDna.slot2
 
-    if (generateMutation() === 10) {hairSlot2 = "brown"};
+    if (generateMutation() === 10) {hairSlot2 = "blonde"};
 
     return new Hair(hairSlot1, hairSlot2)
 };
@@ -188,7 +188,7 @@ const fartty = new Element("fartty", generateColorSlots(asshat, farquar), genera
 const secondGens = [dookie, pupcake, sasquatch, titsmcgee, craphole, weener, buttstreaks, fartty];
 
 // third generation
-const a1 = new Element("a1", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake), dookie, pupcake);
+const a1 = new Element("a1", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake), generateHairSlots(dookie, pupcake), dookie, pupcake);
 const a2 = new Element("a2", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake), dookie, pupcake);
 const a3 = new Element("a3", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake), dookie, pupcake);
 const a4 = new Element("a4", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee), sasquatch, titsmcgee);

@@ -28,8 +28,12 @@ export default function insertFaces(child, generation) {
     newFace.addEventListener('mouseenter', () => {
         tooltip.style.display = 'block';
         tooltip.innerHTML = `Parents: ${child.parent1.name} :: ${child.parent2.name}<br><br>Border: ${child.borderDna.slot1}, ${child.borderDna.slot2}<br><br>Color: ${child.colorDna.slot1}, ${child.colorDna.slot2}<br><br>Hair: ${child.hairDna.slot1}, ${child.hairDna.slot2}`;
-        tooltip.style.left = `${newFace.getBoundingClientRect().left}px`; // position the tooltip
-        tooltip.style.top = `${newFace.getBoundingClientRect().top + newFace.offsetHeight + 5}px`;
+        const rect = newFace.getBoundingClientRect();
+        const tooltipRect = tooltip.getBoundingClientRect();
+      
+        // place to the left, 5px gap
+        tooltip.style.left = `${rect.left + (rect.width - tooltipRect.width + 35) / 2}px`;
+        tooltip.style.top  = `${rect.top - tooltipRect.height + 10}px`;
         tooltip.classList.add('show');
     });
 
@@ -148,8 +152,8 @@ export default function insertFaces(child, generation) {
     }
     else if (child.colorDna.slot1 === child.colorDna.domColor || child.colorDna.slot2 === child.colorDna.domColor) {
         headContainer.classList.add("color-dom");
-        eye1.style.backgroundColor = 'brown';
-        eye2.style.backgroundColor = 'brown';
+        eye1.style.backgroundColor = 'saddlebrown';
+        eye2.style.backgroundColor = 'saddlebrown';
     }
     else {
         headContainer.classList.add("color-rec");
@@ -158,13 +162,13 @@ export default function insertFaces(child, generation) {
     }
 
     // hair check
-    if (child.hairDna.slot1 === "brown" && child.hairDna.slot2 === "brown") {
-        hair.style.backgroundColor = 'saddlebrown';
+    if (child.hairDna.slot1 === "blonde" && child.hairDna.slot2 === "blonde") {
+        hair.style.backgroundColor = 'goldenrod';
     }
     else if (child.hairDna.slot1 === child.hairDna.domColor || child.hairDna.slot2 === child.hairDna.domColor) {
         hair.style.backgroundColor = "black";
     } 
     else {
-        hair.style.backgroundColor = "goldenrod";
+        hair.style.backgroundColor = "saddlebrown";
     }
 };
