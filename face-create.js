@@ -129,6 +129,22 @@ export default function insertFaces(child, generation) {
     position: absolute;
     margin-left: 39px;`
 
+    // creates hair
+    newFace.insertAdjacentHTML("beforeend", `<div class="${child.name}-hair"></div>`);
+    const hair = document.querySelector(`.${child.name}-hair`)
+    hair.style.cssText = `height: 2px;
+    width: 80px;
+    height: 25px;
+    margin-top: -5px;
+    margin-bottom: 12px;
+    border: 1px solid black;
+    border-radius: 9px;
+    background-color: none;
+    position: absolute;
+    margin-left: 9px;`
+
+    
+
     // color check
     if (child.colorDna.slot1 === "green" && child.colorDna.slot2 === "green") {
         headContainer.classList.add("color-special");
