@@ -24,7 +24,17 @@ function generateNumber() {
     return Math.floor((Math.random() * 2) + 1);
 };
 
-function generateMutation() {
+function generateEyeMutationSlot1() {
+    return Math.floor((Math.random() * 10) + 1);
+;}
+function generateEyeMutationSlot2() {
+    return Math.floor((Math.random() * 10) + 1);
+;}
+
+function generateHairMutationSlot1() {
+    return Math.floor((Math.random() * 10) + 1);
+;}
+function generateHairMutationSlot2() {
     return Math.floor((Math.random() * 10) + 1);
 ;}
 
@@ -33,12 +43,12 @@ export function generateColorSlots(parent1, parent2) {
     const colorChance1 = generateNumber();
     let colorSlot1 = colorChance1 === 1 ? parent1.colorDna.slot1 : parent1.colorDna.slot2;
 
-    if (generateMutation() === 10) {colorSlot1 = "green"};
+    if (generateEyeMutationSlot1() === 10) {colorSlot1 = "green"};
 
     const colorChance2 = generateNumber();
     let colorSlot2 = colorChance2 === 1 ? parent2.colorDna.slot1 : parent2.colorDna.slot2
 
-    if (generateMutation() === 10) {colorSlot2 = "green"};
+    if (generateEyeMutationSlot2() === 10) {colorSlot2 = "green"};
 
     return new Color(colorSlot1, colorSlot2)
 };
@@ -58,12 +68,12 @@ function generateHairSlots(parent1, parent2) {
     const hairChance1 = generateNumber();
     let hairSlot1 = hairChance1 === 1 ? parent1.hairDna.slot1 : parent1.hairDna.slot2;
 
-    if (generateMutation() === 10) {hairSlot1 = "blonde"};
+    if (generateHairMutationSlot1() === 10) {hairSlot1 = "blonde"};
 
     const hairChance2 = generateNumber();
     let hairSlot2 = hairChance2 === 1 ? parent2.hairDna.slot1 : parent2.hairDna.slot2
 
-    if (generateMutation() === 10) {hairSlot2 = "blonde"};
+    if (generateHairMutationSlot2() === 10) {hairSlot2 = "blonde"};
 
     return new Hair(hairSlot1, hairSlot2)
 };
@@ -189,17 +199,17 @@ const secondGens = [dookie, pupcake, sasquatch, titsmcgee, craphole, weener, but
 
 // third generation
 const a1 = new Element("a1", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake), generateHairSlots(dookie, pupcake), dookie, pupcake);
-const a2 = new Element("a2", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake), dookie, pupcake);
-const a3 = new Element("a3", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake), dookie, pupcake);
-const a4 = new Element("a4", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee), sasquatch, titsmcgee);
-const a5 = new Element("a5", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee), sasquatch, titsmcgee);
-const a6 = new Element("a6", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee), sasquatch, titsmcgee);
-const a7 = new Element("a7", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener), craphole, weener);
-const a8 = new Element("a8", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener), craphole, weener);
-const a9 = new Element("a9", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener), craphole, weener);
-const a10 = new Element("a10", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty), buttstreaks, fartty);
-const a11 = new Element("a11", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty), buttstreaks, fartty);
-const a12 = new Element("a12", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty), buttstreaks, fartty);
+const a2 = new Element("a2", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake), generateHairSlots(dookie, pupcake), dookie, pupcake);
+const a3 = new Element("a3", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake), generateHairSlots(dookie, pupcake), dookie, pupcake);
+const a4 = new Element("a4", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee), generateHairSlots(sasquatch, titsmcgee), sasquatch, titsmcgee);
+const a5 = new Element("a5", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee), generateHairSlots(sasquatch, titsmcgee), sasquatch, titsmcgee);
+const a6 = new Element("a6", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee), generateHairSlots(sasquatch, titsmcgee), sasquatch, titsmcgee);
+const a7 = new Element("a7", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener), generateHairSlots(craphole, weener), craphole, weener);
+const a8 = new Element("a8", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener), generateHairSlots(craphole, weener), craphole, weener);
+const a9 = new Element("a9", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener), generateHairSlots(craphole, weener), craphole, weener);
+const a10 = new Element("a10", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty), generateHairSlots(buttstreaks, fartty), buttstreaks, fartty);
+const a11 = new Element("a11", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty), generateHairSlots(buttstreaks, fartty), buttstreaks, fartty);
+const a12 = new Element("a12", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty), generateHairSlots(buttstreaks, fartty), buttstreaks, fartty);
 
 const thirdGens = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12];
 
