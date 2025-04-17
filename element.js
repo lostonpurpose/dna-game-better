@@ -12,8 +12,6 @@ export class Element {
         this.parent2 = parent2;
     }
 
-
-
     checkDna() {
         console.log(`${this.name}'s color DNA alleles are ${capitalize(this.colorDna.slot1)} and ${capitalize(this.colorDna.slot2)}`)
         console.log(`Their border DNA alleles are ${capitalize(this.borderDna.slot1)} and ${capitalize(this.borderDna.slot2)}`)

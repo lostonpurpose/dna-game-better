@@ -141,8 +141,6 @@ export default function insertFaces(child, generation) {
     position: absolute;
     margin-left: 9px;`
 
-    
-
     // color check
     if (child.colorDna.slot1 === "green" && child.colorDna.slot2 === "green") {
         headContainer.classList.add("color-special");
@@ -159,5 +157,15 @@ export default function insertFaces(child, generation) {
         eye1.style.backgroundColor = 'lightblue';
         eye2.style.backgroundColor = 'lightblue';
     }
-    
+
+    // hair check
+    if (child.hairDna.slot1 === "brown" && child.hairDna.slot2 === "brown") {
+        hair.style.backgroundColor = 'saddlebrown';
+    }
+    else if (child.hairDna.slot1 === child.hairDna.domColor || child.hairDna.slot2 === child.hairDna.domColor) {
+        hair.style.backgroundColor = "black";
+    } 
+    else {
+        hair.style.backgroundColor = "goldenrod";
+    }
 };
