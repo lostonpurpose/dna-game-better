@@ -1,4 +1,4 @@
-import { Color, Border } from "./dna-alleles.js";
+import { Color, Border, Hair } from "./dna-alleles.js";
 import { Element } from "./element.js";
 import insertFaces from "./face-create.js";
 import { og, genTwo, genThree } from "./face-create.js";
@@ -9,10 +9,13 @@ const colorRec = new Color("blue", "blue");
 const borderDom = new Border("round", "round");
 const borderRec = new Border("noRound", "noRound");
 
+const hairDom = new Hair("black", "black");
+const hairRec = new Hair("blonde", "blonde")
+
 
 // generate OG generation
-const adam = new Element("Adam", colorDom, borderDom);
-const eve = new Element("Eve", colorRec, borderRec);
+const adam = new Element("Adam", colorDom, borderDom, hairDom);
+const eve = new Element("Eve", colorRec, borderRec, hairRec);
 
 // adam.checkDna();
 // eve.checkDna();
@@ -51,10 +54,24 @@ function generateBorderSlots(parent1, parent2) {
     return new Border(borderSlot1, borderSlot2)
 };
 
+function generateHairSlots(parent1, parent2) {
+    const hairChance1 = generateNumber();
+    let hairSlot1 = hairChance1 === 1 ? parent1.hairDna.slot1 : parent1.hairDna.slot2;
+
+    if (generateMutation() === 10) {hairSlot1 = "brown"};
+
+    const hairChance2 = generateNumber();
+    let hairSlot2 = hairChance2 === 1 ? parent2.hairDna.slot1 : parent2.hairDna.slot2
+
+    if (generateMutation() === 10) {hairSlot2 = "brown"};
+
+    return new Hair(hairSlot1, hairSlot2)
+};
+
 
 // generate first true generation
-const tim = new Element("Tim", generateColorSlots(adam, eve), generateBorderSlots(adam, eve));
-const eric = new Element("Eric", generateColorSlots(adam, eve), generateBorderSlots(adam, eve));
+const tim = new Element("Tim", generateColorSlots(adam, eve), generateBorderSlots(adam, eve), generateHairSlots(adam, eve));
+const eric = new Element("Eric", generateColorSlots(adam, eve), generateBorderSlots(adam, eve), generateHairSlots(adam, eve));
 
 
 // tim.checkDna();
@@ -146,11 +163,11 @@ const eric = new Element("Eric", generateColorSlots(adam, eve), generateBorderSl
 
 
 // first true generation
-const diarrhea = new Element("diarrhea", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), tim, eric);
-const poopy = new Element("poopy", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), tim, eric);
+const diarrhea = new Element("diarrhea", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), generateHairSlots(tim, eric), tim, eric);
+const poopy = new Element("poopy", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), generateHairSlots(tim, eric), tim, eric);
 
-const asshat = new Element("asshat", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), tim, eric);
-const farquar = new Element("farquar", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), tim, eric);
+const asshat = new Element("asshat", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), generateHairSlots(tim, eric), tim, eric);
+const farquar = new Element("farquar", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), generateHairSlots(tim, eric), tim, eric);
 
 const firstGens = [diarrhea, poopy, asshat, farquar];
 

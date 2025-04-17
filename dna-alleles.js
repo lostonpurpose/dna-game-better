@@ -15,3 +15,11 @@ export class Border extends Dna {
         this.domBorder = "round";
     }
 }
+
+export class Hair extends Dna {
+
+    constructor(slot1, slot2) {
+        super(slot1, slot2);
+        this.domBorder = "black";
+    }
+}
