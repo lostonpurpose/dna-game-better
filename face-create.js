@@ -34,7 +34,7 @@ export default function insertFaces(child, generation) {
       
         // place to the left, 5px gap
         tooltip.style.left = `${rect.left + (rect.width - tooltipRect.width + 35) / 2}px`;
-        tooltip.style.top  = `${rect.top - tooltipRect.height + 10}px`;
+        tooltip.style.top  = `${rect.top + window.scrollY - tooltipRect.height + 10}px`;
         tooltip.classList.add('show');
     });
 
