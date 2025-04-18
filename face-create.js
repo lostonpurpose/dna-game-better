@@ -3,6 +3,7 @@
 export const og = document.querySelector(".gen-one");
 export const genTwo = document.querySelector(".gen-two");
 export const genThree = document.querySelector(".gen-three");
+export const genFour = document.querySelector(".gen-four");
 
 // export const generations = [og, genTwo];
 
@@ -27,7 +28,7 @@ export default function insertFaces(child, generation) {
     // On hover, show tooltip
     newFace.addEventListener('mouseenter', () => {
         tooltip.style.display = 'block';
-        tooltip.innerHTML = `Parents: ${child.parent1.name} :: ${child.parent2.name}<br><br>Border: ${child.borderDna.slot1}, ${child.borderDna.slot2}<br><br>Color: ${child.colorDna.slot1}, ${child.colorDna.slot2}<br><br>Hair: ${child.hairDna.slot1}, ${child.hairDna.slot2}`;
+        tooltip.innerHTML = `Parents: ${child.parent1.name} :: ${child.parent2.name}<br><br>Head Shape: ${child.borderDna.slot1}, ${child.borderDna.slot2}<br><br>Color: ${child.colorDna.slot1}, ${child.colorDna.slot2}<br><br>Hair: ${child.hairDna.slot1}, ${child.hairDna.slot2}`;
         const rect = newFace.getBoundingClientRect();
         const tooltipRect = tooltip.getBoundingClientRect();
       

@@ -1,7 +1,7 @@
 import { Color, Border, Hair } from "./dna-alleles.js";
 import { Element } from "./element.js";
 import insertFaces from "./face-create.js";
-import { og, genTwo, genThree } from "./face-create.js";
+import { og, genTwo, genThree, genFour } from "./face-create.js";
 
 const colorDom = new Color("brown", "brown");
 const colorRec = new Color("blue", "blue");
@@ -213,6 +213,21 @@ const a12 = new Element("a12", generateColorSlots(buttstreaks, fartty), generate
 
 const thirdGens = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12];
 
+const b1 = new Element("b1", generateColorSlots(a1, a2), generateBorderSlots(a1, a2), generateHairSlots(a1, a2), a1, a2);
+const b2 = new Element("b2", generateColorSlots(a1, a2), generateBorderSlots(a1, a2), generateHairSlots(a1, a2), a1, a2);
+const b3 = new Element("b3", generateColorSlots(a3, a4), generateBorderSlots(a3, a4), generateHairSlots(a3, a4), a3, a4);
+const b4 = new Element("b4", generateColorSlots(a3, a4), generateBorderSlots(a3, a4), generateHairSlots(a3, a4), a3, a4);
+const b5 = new Element("b5", generateColorSlots(a5, a6), generateBorderSlots(a5, a6), generateHairSlots(a5, a6), a5, a6);
+const b6 = new Element("b6", generateColorSlots(a5, a6), generateBorderSlots(a5, a6), generateHairSlots(a5, a6), a5, a6);
+const b7 = new Element("b7", generateColorSlots(a7, a8), generateBorderSlots(a7, a8), generateHairSlots(a7, a8), a7, a8);
+const b8 = new Element("b8", generateColorSlots(a7, a8), generateBorderSlots(a7, a8), generateHairSlots(a7, a8), a7, a8);
+const b9 = new Element("b9", generateColorSlots(a9, a10), generateBorderSlots(a9, a10), generateHairSlots(a9, a10), a9, a10);
+const b10 = new Element("b10", generateColorSlots(a9, a10), generateBorderSlots(a9, a10), generateHairSlots(a9, a10), a9, a10);
+const b11 = new Element("b11", generateColorSlots(a11, a12), generateBorderSlots(a11, a12), generateHairSlots(a11, a12), a11, a12);
+const b12 = new Element("b12", generateColorSlots(a11, a12), generateBorderSlots(a11, a12), generateHairSlots(a11, a12), a11, a12);
+
+const fourthGens = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12];
+// 
 // const secondUl = document.getElementById("g2-ul-1")
 // const secondUl2 = document.getElementById("g2-ul-2")
 // end
@@ -267,6 +282,17 @@ thirdGens.forEach((child, index) => {
 
     // magically adds a spacer element after 
     if ((index + 1) % 3 === 0) {
+        const faceContainer = document.querySelector(`.${child.name}-container`);
+        faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
+    }
+});
+
+// runs face gen for fourth generation
+fourthGens.forEach((child, index) => {
+    insertFaces(child, genFour)
+
+    // magically adds a spacer element after 
+    if ((index + 1) % 2 === 0) {
         const faceContainer = document.querySelector(`.${child.name}-container`);
         faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
     }

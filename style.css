@@ -100,7 +100,7 @@ li {
     display: flex;
 }
 
-.gen-one, .gen-two, .gen-three {
+.gen-one, .gen-two, .gen-three, .gen-four {
     display: flex;
     justify-content: center;
     margin-top: 3rem;
