@@ -4,6 +4,7 @@ export const og = document.querySelector(".gen-one");
 export const genTwo = document.querySelector(".gen-two");
 export const genThree = document.querySelector(".gen-three");
 export const genFour = document.querySelector(".gen-four");
+export const timEric = document.querySelector(".tim-eric");
 
 // export const generations = [og, genTwo];
 
@@ -18,6 +19,7 @@ export default function insertFaces(child, generation) {
     headContainer.insertAdjacentHTML("beforeend", `<div class="${child.name}"></div>`);
     const newFace = headContainer.querySelector(`.${child.name}`);
     
+    function toolTip() {
     // tooltip with DNA 
     // HTML structure for tooltip
     const tooltip = document.createElement('div');
@@ -47,6 +49,11 @@ export default function insertFaces(child, generation) {
         
     });
     // end tooltip
+};
+
+    if (child.name !== "tim" && child.name !== "eric") {
+        toolTip();
+    }
 
     // adds name for each face
     newFace.insertAdjacentHTML("afterend", `<p class="face-name">${child.name}</p>`);

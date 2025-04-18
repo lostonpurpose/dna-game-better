@@ -1,7 +1,7 @@
 import { Color, Border, Hair } from "./dna-alleles.js";
 import { Element } from "./element.js";
 import insertFaces from "./face-create.js";
-import { og, genTwo, genThree, genFour } from "./face-create.js";
+import { og, genTwo, genThree, genFour, timEric } from "./face-create.js";
 
 const colorDom = new Color("brown", "brown");
 const colorRec = new Color("blue", "blue");
@@ -10,7 +10,7 @@ const borderDom = new Border("round", "round");
 const borderRec = new Border("square", "square");
 
 const hairDom = new Hair("black", "black");
-const hairRec = new Hair("brown", "brown")
+const hairRec = new Hair("brown", "brown");
 
 
 // generate OG generation
@@ -28,34 +28,46 @@ function generateNumberSlot2() {
     return Math.floor((Math.random() * 2) + 1);
 };
 
+
 function generateEyeMutationSlot1() {
-    return Math.floor((Math.random() * 10) + 1);
+    const check = Math.floor((Math.random() * 10) + 1);
+    console.log(check);
+    return check
 ;}
 function generateEyeMutationSlot2() {
-    return Math.floor((Math.random() * 10) + 1);
+    const check = Math.floor((Math.random() * 10) + 1);
+    console.log(check);
+    return check
 ;}
 
 function generateHairMutationSlot1() {
-    return Math.floor((Math.random() * 10) + 1);
-;}
-function generateHairMutationSlot2() {
-    return Math.floor((Math.random() * 10) + 1);
+    const check = Math.floor((Math.random() * 10) + 1);
+    console.log(check);
+    return check
 ;}
 
-export function generateColorSlots(parent1, parent2) {
-    
+function generateHairMutationSlot2() {
+    const check = Math.floor((Math.random() * 10) + 1);
+    console.log(check);
+    return check
+;}
+
+function generateColorSlots(parent1, parent2) {
     const colorChance1 = generateNumberSlot1();
     let colorSlot1 = colorChance1 === 1 ? parent1.colorDna.slot1 : parent1.colorDna.slot2;
-
-    if (generateEyeMutationSlot1() === 10) {colorSlot1 = "green"};
+    const mutationSlot1 = generateEyeMutationSlot1(); // Check mutation value for Slot 1
+    console.log('Before mutation Slot 1:', colorSlot1, 'Mutation check:', mutationSlot1);
+    if (mutationSlot1 === 10) { colorSlot1 = "green"; }
 
     const colorChance2 = generateNumberSlot2();
-    let colorSlot2 = colorChance2 === 1 ? parent2.colorDna.slot1 : parent2.colorDna.slot2
+    let colorSlot2 = colorChance2 === 1 ? parent2.colorDna.slot1 : parent2.colorDna.slot2;
+    const mutationSlot2 = generateEyeMutationSlot2(); // Check mutation value for Slot 2
+    console.log('Before mutation Slot 2:', colorSlot2, 'Mutation check:', mutationSlot2);
+    if (mutationSlot2 === 10) { colorSlot2 = "green"; }
 
-    if (generateEyeMutationSlot2() === 10) {colorSlot2 = "green"};
-
-    return new Color(colorSlot1, colorSlot2)
-};
+    console.log('After mutation:', colorSlot1, colorSlot2); // Final state of both slots
+    return new Color(colorSlot1, colorSlot2);
+}
 
 function generateBorderSlots(parent1, parent2) {
     
@@ -87,6 +99,8 @@ function generateHairSlots(parent1, parent2) {
 const tim = new Element("Tim", generateColorSlots(adam, eve), generateBorderSlots(adam, eve), generateHairSlots(adam, eve));
 const eric = new Element("Eric", generateColorSlots(adam, eve), generateBorderSlots(adam, eve), generateHairSlots(adam, eve));
 
+const grandfathers = [tim, eric];
+
 
 // first true generation
 const diarrhea = new Element("diarrhea", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), generateHairSlots(tim, eric), tim, eric);
@@ -96,10 +110,6 @@ const asshat = new Element("asshat", generateColorSlots(tim, eric), generateBord
 const farquar = new Element("farquar", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), generateHairSlots(tim, eric), tim, eric);
 
 const firstGens = [diarrhea, poopy, asshat, farquar];
-
-// const firstUl = document.getElementById("g1-ul-1")
-// const firstUl2 = document.getElementById("g1-ul-2")
-// end
 
 // second generation
 const dookie = new Element("dookie", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy), generateHairSlots(diarrhea, poopy), diarrhea, poopy);
@@ -145,6 +155,12 @@ const b12 = new Element("b12", generateColorSlots(a11, a12), generateBorderSlots
 const fourthGens = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12];
 
 
+
+// runs face gen for tim and eric
+grandfathers.forEach((child) => {
+    insertFaces(child, timEric);
+});
+
 // runs face gen for first generation
 firstGens.forEach((child, index) => {
     insertFaces(child, og);
@@ -188,3 +204,21 @@ fourthGens.forEach((child, index) => {
         faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
     }
 });
+
+let emutes = 0
+fourthGens.forEach(child => {
+    if (child.colorDna.slot1 === "green" || child.colorDna.slot2 === "green") {
+        emutes += 1
+    }
+});
+const eMutations = document.querySelector(".e-mutes");
+eMutations.insertAdjacentText("beforeend", `${emutes}`);
+
+let hmutes = 0
+fourthGens.forEach(child => {
+    if (child.hairDna.slot1 === "blonde" || child.hairDna.slot2 === "blonde") {
+        hmutes += 1
+    }
+});
+const hMutations = document.querySelector(".h-mutes");
+hMutations.insertAdjacentText("beforeend", `${hmutes}`);
