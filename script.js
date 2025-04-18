@@ -88,94 +88,6 @@ const tim = new Element("Tim", generateColorSlots(adam, eve), generateBorderSlot
 const eric = new Element("Eric", generateColorSlots(adam, eve), generateBorderSlots(adam, eve), generateHairSlots(adam, eve));
 
 
-// tim.checkDna();
-// eric.checkDna();
-
-// const turdBoy = new Element("TurdBoy", generateColorSlots(tim, eric), generateBorderSlots(tim, eric));
-
-// turdBoy.checkDna();
-
-// const numberOne = document.querySelector(".first-true-child");
-
-// this just creates Turd Boy, the original child
-// function insertNumberOne(child) {
-//     numberOne.innerText = child.name;
-
-//     // creates head
-//     numberOne.insertAdjacentHTML("afterend", `<div class="${child.name}"></div>`);
-
-//     const facehuh = document.querySelector(`.${child.name}`);
-
-//     // creates eyes
-//     facehuh.insertAdjacentHTML("beforeend", `<div class="${child.name}-eye1"></div>`);
-//     facehuh.insertAdjacentHTML("beforeend", `<div class="${child.name}-eye2"></div>`);
-
-//     // creates mouth
-//     facehuh.insertAdjacentHTML("beforeend", `<div class="${child.name}-mouth"></div>`);
-
-//     const eye1 = document.querySelector(`.${child.name}-eye1`);
-//     const eye2 = document.querySelector(`.${child.name}-eye2`);
-
-
-
-//     // color check
-//     if (child.colorDna.slot1 === "green" && child.colorDna.slot2 === "green") {
-//         numberOne.classList.add("color-special");
-//         eye1.style.backgroundColor = 'green';
-//         eye2.style.backgroundColor = 'green';
-//     }
-//     else if (child.colorDna.slot1 === child.colorDna.domColor || child.colorDna.slot2 === child.colorDna.domColor) {
-//         numberOne.classList.add("color-dom");
-//         eye1.style.backgroundColor = 'brown';
-//         eye2.style.backgroundColor = 'brown';
-//     }
-//     else {
-//         numberOne.classList.add("color-rec");
-//         eye1.style.backgroundColor = 'lightblue';
-//         eye2.style.backgroundColor = 'lightblue';
-//     }
-//     // border check
-//     if (child.borderDna.slot1 === child.borderDna.domBorder || child.borderDna.slot2 === child.borderDna.domBorder) {
-//         return
-//     }
-//     else {
-//         numberOne.classList.add("border-rec")
-//     }
-// };
-
-// insertNumberOne(turdBoy);
-
-// turd boy end
-
-
-// function insertChild(element) {
-//     const currentItem = document.querySelector(`.${element.name}`);
-//     // color check
-//     if (element.colorDna.slot1 === "green" && element.colorDna.slot2 === "green") {
-//         currentItem.classList.add("color-special")
-//     }
-//     else if (element.colorDna.slot1 === element.colorDna.domColor || element.colorDna.slot2 === element.colorDna.domColor) {
-//     currentItem.classList.add("color-dom")
-//     }
-//     else {
-//         currentItem.classList.add("color-rec")
-//     }
-//     // border check
-//     if (element.borderDna.slot1 === element.borderDna.domBorder || element.borderDna.slot2 === element.borderDna.domBorder) {
-//         return
-
-//         // probably need to add the border-dom here since they start as squa/res
-//         //
-//         //
-//         //
-//         //
-//     }
-//     else {
-//         currentItem.classList.add("border-rec")
-//     }
-// };
-
-
 // first true generation
 const diarrhea = new Element("diarrhea", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), generateHairSlots(tim, eric), tim, eric);
 const poopy = new Element("poopy", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), generateHairSlots(tim, eric), tim, eric);
@@ -231,31 +143,6 @@ const b11 = new Element("b11", generateColorSlots(a11, a12), generateBorderSlots
 const b12 = new Element("b12", generateColorSlots(a11, a12), generateBorderSlots(a11, a12), generateHairSlots(a11, a12), a11, a12);
 
 const fourthGens = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12];
-// 
-// const secondUl = document.getElementById("g2-ul-1")
-// const secondUl2 = document.getElementById("g2-ul-2")
-// end
-
-
-// function to generate child elements
-// these are just text
-// function childGenerator(firstGens, firstGens2, ul1, ul2) {
-    
-
-//     firstGens.forEach(element => {
-//         ul1.insertAdjacentHTML("beforeend", `<li class="${element.name}">${element.name}</li>`);
-//         insertChild(element);
-//     });
-    
-//     firstGens2.forEach(element => {
-//         ul2.insertAdjacentHTML("beforeend", `<li class="${element.name}">${element.name}</li>`);
-//         insertChild(element);
-//     });
-// };
-
-// these are for the words only
-// childGenerator(firstGens, firstGens2, firstUl, firstUl2);
-// childGenerator(secondGens, secondGens2, secondUl, secondUl2)
 
 
 // runs face gen for first generation
