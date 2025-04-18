@@ -138,7 +138,7 @@ small-spacer {
 
 .tooltip {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     border-radius: 5px;
     padding: 10px;
