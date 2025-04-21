@@ -18,8 +18,9 @@ const genTwoButton = document.querySelector(".gen-two-btn");
 const genThreeButton = document.querySelector(".gen-three-btn");
 const genFourButton = document.querySelector(".gen-four-btn");
 const autoGen = document.querySelector(".auto-gen");
-document.querySelector(".regen").hidden = true;
-
+genTwoButton.disabled = true;
+genThreeButton.disabled = true;
+genFourButton.disabled = true;
 
 
 // generate OG generation
@@ -184,6 +185,7 @@ function firstGeneration() {
         }
     });
     genOneButton.hidden = true;
+    genTwoButton.disabled = false;
 };
 
 genOneButton.addEventListener('click', firstGeneration);
@@ -201,6 +203,7 @@ function secondGeneration() {
         }
     });
     genTwoButton.hidden = true;
+    genThreeButton.disabled = false;
 };
 
 genTwoButton.addEventListener('click', secondGeneration);
@@ -218,7 +221,7 @@ function thirdGeneration() {
         }
     });
     genThreeButton.hidden = true;
-
+    genFourButton.disabled = false;
 };
 
 genThreeButton.addEventListener('click', thirdGeneration);
@@ -240,6 +243,7 @@ function fourthGeneration() {
 
 genFourButton.addEventListener('click', fourthGeneration);
 
+// auto gen all faces
 function autoGenerate() {
     // Set a flag in sessionStorage before reload
     sessionStorage.setItem('runFunctions', 'true');
