@@ -12,6 +12,12 @@ const borderRec = new Border("square", "square");
 const hairDom = new Hair("black", "black");
 const hairRec = new Hair("brown", "brown");
 
+// Buttons
+const genOneButton = document.querySelector(".gen-one-btn");
+const genTwoButton = document.querySelector(".gen-one-btn");
+const genThreeButton = document.querySelector(".gen-one-btn");
+const genFourButton = document.querySelector(".gen-one-btn");
+
 
 // generate OG generation
 const adam = new Element("Adam", colorDom, borderDom, hairDom);
@@ -157,20 +163,25 @@ const fourthGens = [Will, Ayaka, Evan, Amelie, Jarrett, Daisy, Ty, Millie, Dariu
 
 
 // runs face gen for tim and eric
+
 grandfathers.forEach((child) => {
     insertFaces(child, timEric);
 });
 
-// runs face gen for first generation
-firstGens.forEach((child, index) => {
-    insertFaces(child, og);
+function firstGeneration() {
 
-    // magically adds a spacer element after 
-    if ((index + 1) % 2 === 0) {
-        const faceContainer = document.querySelector(`.${child.name}-container`);
-        faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
-    }
-});
+    // runs face gen for first generation
+    firstGens.forEach((child, index) => {
+        insertFaces(child, og);
+
+        // magically adds a spacer element after 
+        if ((index + 1) % 2 === 0) {
+            const faceContainer = document.querySelector(`.${child.name}-container`);
+            faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
+        }
+    });
+};
+genOneButton.addEventListener('click', firstGeneration);
 
 // runs face gen for second generation
 secondGens.forEach((child, index) => {
@@ -205,6 +216,7 @@ fourthGens.forEach((child, index) => {
     }
 });
 
+// Displays # of mutations
 let emutes = 0
 fourthGens.forEach(child => {
     if (child.colorDna.slot1 === "green" || child.colorDna.slot2 === "green") {
