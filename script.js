@@ -103,56 +103,56 @@ const grandfathers = [tim, eric];
 
 
 // first true generation
-const diarrhea = new Element("diarrhea", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), generateHairSlots(tim, eric), tim, eric);
-const poopy = new Element("poopy", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), generateHairSlots(tim, eric), tim, eric);
+const Billy = new Element("Billy", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), generateHairSlots(tim, eric), tim, eric);
+const Sarah = new Element("Sarah", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), generateHairSlots(tim, eric), tim, eric);
 
-const asshat = new Element("asshat", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), generateHairSlots(tim, eric), tim, eric);
-const farquar = new Element("farquar", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), generateHairSlots(tim, eric), tim, eric);
+const Cecil = new Element("Cecil", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), generateHairSlots(tim, eric), tim, eric);
+const Angela = new Element("Angela", generateColorSlots(tim, eric), generateBorderSlots(tim, eric), generateHairSlots(tim, eric), tim, eric);
 
-const firstGens = [diarrhea, poopy, asshat, farquar];
+const firstGens = [Billy, Sarah, Cecil, Angela];
 
 // second generation
-const dookie = new Element("dookie", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy), generateHairSlots(diarrhea, poopy), diarrhea, poopy);
-const pupcake = new Element("pupcake", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy), generateHairSlots(diarrhea, poopy), diarrhea, poopy);
-const sasquatch = new Element("sasquatch", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy), generateHairSlots(diarrhea, poopy), diarrhea, poopy);
-const titsmcgee = new Element("titsmcgee", generateColorSlots(diarrhea, poopy), generateBorderSlots(diarrhea, poopy), generateHairSlots(diarrhea, poopy), diarrhea, poopy);
-const craphole = new Element("craphole", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar), generateHairSlots(asshat, farquar), asshat, farquar);
-const weener = new Element("weener", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar), generateHairSlots(asshat, farquar), asshat, farquar);
-const buttstreaks = new Element("buttstreaks", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar), generateHairSlots(asshat, farquar), asshat, farquar);
-const fartty = new Element("fartty", generateColorSlots(asshat, farquar), generateBorderSlots(asshat, farquar), generateHairSlots(asshat, farquar), asshat, farquar);
+const Clem = new Element("Clem", generateColorSlots(Billy, Sarah), generateBorderSlots(Billy, Sarah), generateHairSlots(Billy, Sarah), Billy, Sarah);
+const Clara = new Element("Clara", generateColorSlots(Billy, Sarah), generateBorderSlots(Billy, Sarah), generateHairSlots(Billy, Sarah), Billy, Sarah);
+const Herald = new Element("Herald", generateColorSlots(Billy, Sarah), generateBorderSlots(Billy, Sarah), generateHairSlots(Billy, Sarah), Billy, Sarah);
+const Jenny = new Element("Jenny", generateColorSlots(Billy, Sarah), generateBorderSlots(Billy, Sarah), generateHairSlots(Billy, Sarah), Billy, Sarah);
+const Ernest = new Element("Ernest", generateColorSlots(Cecil, Angela), generateBorderSlots(Cecil, Angela), generateHairSlots(Cecil, Angela), Cecil, Angela);
+const Tania = new Element("Tania", generateColorSlots(Cecil, Angela), generateBorderSlots(Cecil, Angela), generateHairSlots(Cecil, Angela), Cecil, Angela);
+const Xavier = new Element("Xavier", generateColorSlots(Cecil, Angela), generateBorderSlots(Cecil, Angela), generateHairSlots(Cecil, Angela), Cecil, Angela);
+const Lara = new Element("Lara", generateColorSlots(Cecil, Angela), generateBorderSlots(Cecil, Angela), generateHairSlots(Cecil, Angela), Cecil, Angela);
 
-const secondGens = [dookie, pupcake, sasquatch, titsmcgee, craphole, weener, buttstreaks, fartty];
+const secondGens = [Clem, Clara, Herald, Jenny, Ernest, Tania, Xavier, Lara];
 
 // third generation
-const a1 = new Element("a1", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake), generateHairSlots(dookie, pupcake), dookie, pupcake);
-const a2 = new Element("a2", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake), generateHairSlots(dookie, pupcake), dookie, pupcake);
-const a3 = new Element("a3", generateColorSlots(dookie, pupcake), generateBorderSlots(dookie, pupcake), generateHairSlots(dookie, pupcake), dookie, pupcake);
-const a4 = new Element("a4", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee), generateHairSlots(sasquatch, titsmcgee), sasquatch, titsmcgee);
-const a5 = new Element("a5", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee), generateHairSlots(sasquatch, titsmcgee), sasquatch, titsmcgee);
-const a6 = new Element("a6", generateColorSlots(sasquatch, titsmcgee), generateBorderSlots(sasquatch, titsmcgee), generateHairSlots(sasquatch, titsmcgee), sasquatch, titsmcgee);
-const a7 = new Element("a7", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener), generateHairSlots(craphole, weener), craphole, weener);
-const a8 = new Element("a8", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener), generateHairSlots(craphole, weener), craphole, weener);
-const a9 = new Element("a9", generateColorSlots(craphole, weener), generateBorderSlots(craphole, weener), generateHairSlots(craphole, weener), craphole, weener);
-const a10 = new Element("a10", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty), generateHairSlots(buttstreaks, fartty), buttstreaks, fartty);
-const a11 = new Element("a11", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty), generateHairSlots(buttstreaks, fartty), buttstreaks, fartty);
-const a12 = new Element("a12", generateColorSlots(buttstreaks, fartty), generateBorderSlots(buttstreaks, fartty), generateHairSlots(buttstreaks, fartty), buttstreaks, fartty);
+const Boss = new Element("Boss", generateColorSlots(Clem, Clara), generateBorderSlots(Clem, Clara), generateHairSlots(Clem, Clara), Clem, Clara);
+const Maddie = new Element("Maddie", generateColorSlots(Clem, Clara), generateBorderSlots(Clem, Clara), generateHairSlots(Clem, Clara), Clem, Clara);
+const Hank = new Element("Hank", generateColorSlots(Clem, Clara), generateBorderSlots(Clem, Clara), generateHairSlots(Clem, Clara), Clem, Clara);
+const Harriet = new Element("Harriet", generateColorSlots(Herald, Jenny), generateBorderSlots(Herald, Jenny), generateHairSlots(Herald, Jenny), Herald, Jenny);
+const Nick = new Element("Nick", generateColorSlots(Herald, Jenny), generateBorderSlots(Herald, Jenny), generateHairSlots(Herald, Jenny), Herald, Jenny);
+const Oprah = new Element("Oprah", generateColorSlots(Herald, Jenny), generateBorderSlots(Herald, Jenny), generateHairSlots(Herald, Jenny), Herald, Jenny);
+const Nelson = new Element("Nelson", generateColorSlots(Ernest, Tania), generateBorderSlots(Ernest, Tania), generateHairSlots(Ernest, Tania), Ernest, Tania);
+const Regina = new Element("Regina", generateColorSlots(Ernest, Tania), generateBorderSlots(Ernest, Tania), generateHairSlots(Ernest, Tania), Ernest, Tania);
+const Marvin = new Element("Marvin", generateColorSlots(Ernest, Tania), generateBorderSlots(Ernest, Tania), generateHairSlots(Ernest, Tania), Ernest, Tania);
+const Bertha = new Element("Bertha", generateColorSlots(Xavier, Lara), generateBorderSlots(Xavier, Lara), generateHairSlots(Xavier, Lara), Xavier, Lara);
+const Ronnie = new Element("Ronnie", generateColorSlots(Xavier, Lara), generateBorderSlots(Xavier, Lara), generateHairSlots(Xavier, Lara), Xavier, Lara);
+const Yvonne = new Element("Yvonne", generateColorSlots(Xavier, Lara), generateBorderSlots(Xavier, Lara), generateHairSlots(Xavier, Lara), Xavier, Lara);
 
-const thirdGens = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12];
+const thirdGens = [Boss, Maddie, Hank, Harriet, Nick, Oprah, Nelson, Regina, Marvin, Bertha, Ronnie, Yvonne];
 
-const b1 = new Element("b1", generateColorSlots(a1, a2), generateBorderSlots(a1, a2), generateHairSlots(a1, a2), a1, a2);
-const b2 = new Element("b2", generateColorSlots(a1, a2), generateBorderSlots(a1, a2), generateHairSlots(a1, a2), a1, a2);
-const b3 = new Element("b3", generateColorSlots(a3, a4), generateBorderSlots(a3, a4), generateHairSlots(a3, a4), a3, a4);
-const b4 = new Element("b4", generateColorSlots(a3, a4), generateBorderSlots(a3, a4), generateHairSlots(a3, a4), a3, a4);
-const b5 = new Element("b5", generateColorSlots(a5, a6), generateBorderSlots(a5, a6), generateHairSlots(a5, a6), a5, a6);
-const b6 = new Element("b6", generateColorSlots(a5, a6), generateBorderSlots(a5, a6), generateHairSlots(a5, a6), a5, a6);
-const b7 = new Element("b7", generateColorSlots(a7, a8), generateBorderSlots(a7, a8), generateHairSlots(a7, a8), a7, a8);
-const b8 = new Element("b8", generateColorSlots(a7, a8), generateBorderSlots(a7, a8), generateHairSlots(a7, a8), a7, a8);
-const b9 = new Element("b9", generateColorSlots(a9, a10), generateBorderSlots(a9, a10), generateHairSlots(a9, a10), a9, a10);
-const b10 = new Element("b10", generateColorSlots(a9, a10), generateBorderSlots(a9, a10), generateHairSlots(a9, a10), a9, a10);
-const b11 = new Element("b11", generateColorSlots(a11, a12), generateBorderSlots(a11, a12), generateHairSlots(a11, a12), a11, a12);
-const b12 = new Element("b12", generateColorSlots(a11, a12), generateBorderSlots(a11, a12), generateHairSlots(a11, a12), a11, a12);
+const Will = new Element("Will", generateColorSlots(Boss, Maddie), generateBorderSlots(Boss, Maddie), generateHairSlots(Boss, Maddie), Boss, Maddie);
+const Ayaka = new Element("Ayaka", generateColorSlots(Boss, Maddie), generateBorderSlots(Boss, Maddie), generateHairSlots(Boss, Maddie), Boss, Maddie);
+const Evan = new Element("Evan", generateColorSlots(Hank, Harriet), generateBorderSlots(Hank, Harriet), generateHairSlots(Hank, Harriet), Hank, Harriet);
+const Amelie = new Element("Amelie", generateColorSlots(Hank, Harriet), generateBorderSlots(Hank, Harriet), generateHairSlots(Hank, Harriet), Hank, Harriet);
+const Jarrett = new Element("Jarrett", generateColorSlots(Nick, Oprah), generateBorderSlots(Nick, Oprah), generateHairSlots(Nick, Oprah), Nick, Oprah);
+const Daisy = new Element("Daisy", generateColorSlots(Nick, Oprah), generateBorderSlots(Nick, Oprah), generateHairSlots(Nick, Oprah), Nick, Oprah);
+const Ty = new Element("Ty", generateColorSlots(Nelson, Regina), generateBorderSlots(Nelson, Regina), generateHairSlots(Nelson, Regina), Nelson, Regina);
+const Millie = new Element("Millie", generateColorSlots(Nelson, Regina), generateBorderSlots(Nelson, Regina), generateHairSlots(Nelson, Regina), Nelson, Regina);
+const Darius = new Element("Darius", generateColorSlots(Marvin, Bertha), generateBorderSlots(Marvin, Bertha), generateHairSlots(Marvin, Bertha), Marvin, Bertha);
+const Chelsea = new Element("Chelsea", generateColorSlots(Marvin, Bertha), generateBorderSlots(Marvin, Bertha), generateHairSlots(Marvin, Bertha), Marvin, Bertha);
+const Donovan = new Element("Donovan", generateColorSlots(Ronnie, Yvonne), generateBorderSlots(Ronnie, Yvonne), generateHairSlots(Ronnie, Yvonne), Ronnie, Yvonne);
+const Leslie = new Element("Leslie", generateColorSlots(Ronnie, Yvonne), generateBorderSlots(Ronnie, Yvonne), generateHairSlots(Ronnie, Yvonne), Ronnie, Yvonne);
 
-const fourthGens = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12];
+const fourthGens = [Will, Ayaka, Evan, Amelie, Jarrett, Daisy, Ty, Millie, Darius, Chelsea, Donovan, Leslie];
 
 
 
