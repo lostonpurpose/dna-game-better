@@ -14,9 +14,9 @@ const hairRec = new Hair("brown", "brown");
 
 // Buttons
 const genOneButton = document.querySelector(".gen-one-btn");
-const genTwoButton = document.querySelector(".gen-one-btn");
-const genThreeButton = document.querySelector(".gen-one-btn");
-const genFourButton = document.querySelector(".gen-one-btn");
+const genTwoButton = document.querySelector(".gen-two-btn");
+const genThreeButton = document.querySelector(".gen-three-btn");
+const genFourButton = document.querySelector(".gen-four-btn");
 
 
 // generate OG generation
@@ -181,40 +181,56 @@ function firstGeneration() {
         }
     });
 };
+
 genOneButton.addEventListener('click', firstGeneration);
 
-// runs face gen for second generation
-secondGens.forEach((child, index) => {
-    insertFaces(child, genTwo)
+function secondGeneration() {
 
-    // magically adds a spacer element after 
-    if ((index + 1) % 2 === 0) {
-        const faceContainer = document.querySelector(`.${child.name}-container`);
-        faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
-    }
-});
+    // runs face gen for second generation
+    secondGens.forEach((child, index) => {
+        insertFaces(child, genTwo)
 
-// runs face gen for third generation
-thirdGens.forEach((child, index) => {
-    insertFaces(child, genThree)
+        // magically adds a spacer element after 
+        if ((index + 1) % 2 === 0) {
+            const faceContainer = document.querySelector(`.${child.name}-container`);
+            faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
+        }
+    });
+};
 
-    // magically adds a spacer element after 
-    if ((index + 1) % 3 === 0) {
-        const faceContainer = document.querySelector(`.${child.name}-container`);
-        faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
-    }
-});
+genTwoButton.addEventListener('click', secondGeneration);
 
-// runs face gen for fourth generation
-fourthGens.forEach((child, index) => {
-    insertFaces(child, genFour)
+function thirdGeneration() {
 
-    // magically adds a spacer element after 
-    if ((index + 1) % 2 === 0) {
-        const faceContainer = document.querySelector(`.${child.name}-container`);
-        faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
-    }
-});
+    // runs face gen for third generation
+    thirdGens.forEach((child, index) => {
+        insertFaces(child, genThree)
+
+        // magically adds a spacer element after 
+        if ((index + 1) % 3 === 0) {
+            const faceContainer = document.querySelector(`.${child.name}-container`);
+            faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
+        }
+    });
+};
+
+genThreeButton.addEventListener('click', thirdGeneration);
+
+function fourthGeneration() {
+
+    // runs face gen for fourth generation
+    fourthGens.forEach((child, index) => {
+        insertFaces(child, genFour)
+
+        // magically adds a spacer element after 
+        if ((index + 1) % 2 === 0) {
+            const faceContainer = document.querySelector(`.${child.name}-container`);
+            faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
+        }
+    });
+};
+
+genFourButton.addEventListener('click', fourthGeneration);
 
 // Displays # of mutations
 let emutes = 0
