@@ -17,7 +17,8 @@ const genOneButton = document.querySelector(".gen-one-btn");
 const genTwoButton = document.querySelector(".gen-two-btn");
 const genThreeButton = document.querySelector(".gen-three-btn");
 const genFourButton = document.querySelector(".gen-four-btn");
-const AutoGen = document.querySelector(".auto-gen");
+const autoGen = document.querySelector(".auto-gen");
+document.querySelector(".regen").hidden = true;
 
 
 
@@ -182,6 +183,7 @@ function firstGeneration() {
             faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
         }
     });
+    genOneButton.hidden = true;
 };
 
 genOneButton.addEventListener('click', firstGeneration);
@@ -198,6 +200,7 @@ function secondGeneration() {
             faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
         }
     });
+    genTwoButton.hidden = true;
 };
 
 genTwoButton.addEventListener('click', secondGeneration);
@@ -214,6 +217,8 @@ function thirdGeneration() {
             faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
         }
     });
+    genThreeButton.hidden = true;
+
 };
 
 genThreeButton.addEventListener('click', thirdGeneration);
@@ -230,18 +235,43 @@ function fourthGeneration() {
             faceContainer.insertAdjacentHTML("afterend", `<spacer></spacer>`);
         }
     });
+    genFourButton.hidden = true;
 };
 
 genFourButton.addEventListener('click', fourthGeneration);
 
 function autoGenerate() {
-    firstGeneration();
-    secondGeneration();
-    thirdGeneration();
-    fourthGeneration();
+    // Set a flag in sessionStorage before reload
+    sessionStorage.setItem('runFunctions', 'true');
+    location.reload();
+}
+
+// Check if the flag is set after reload
+window.onload = function() {
+    if (sessionStorage.getItem('runFunctions') === 'true') {
+        sessionStorage.removeItem('runFunctions'); // Remove the flag
+        firstGeneration();
+        secondGeneration();
+        thirdGeneration();
+        fourthGeneration();
+        genOneButton.hidden = true;
+        genTwoButton.hidden = true;
+        genThreeButton.hidden = true;
+        genFourButton.hidden = true;
+        autoGen.innerText = "Regenerate";
+        // regen.hidden = false;
+    }
 };
 
-AutoGen.addEventListener('click', autoGenerate);
+
+autoGen.addEventListener('click', autoGenerate);
+
+
+function regenerate() {
+    location.reload();
+};
+
+// regen.addEventListener('click', regenerate);
 
 // Displays # of mutations
 let emutes = 0
