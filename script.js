@@ -17,6 +17,8 @@ const genOneButton = document.querySelector(".gen-one-btn");
 const genTwoButton = document.querySelector(".gen-two-btn");
 const genThreeButton = document.querySelector(".gen-three-btn");
 const genFourButton = document.querySelector(".gen-four-btn");
+const AutoGen = document.querySelector(".auto-gen");
+
 
 
 // generate OG generation
@@ -231,6 +233,15 @@ function fourthGeneration() {
 };
 
 genFourButton.addEventListener('click', fourthGeneration);
+
+function autoGenerate() {
+    firstGeneration();
+    secondGeneration();
+    thirdGeneration();
+    fourthGeneration();
+};
+
+AutoGen.addEventListener('click', autoGenerate);
 
 // Displays # of mutations
 let emutes = 0
