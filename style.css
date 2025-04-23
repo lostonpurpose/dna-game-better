@@ -160,3 +160,10 @@ small-spacer {
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.6); /* Green glow */
     cursor: pointer;
 }
+
+button {
+    background: linear-gradient(to right, rgb(193, 193, 255), rgb(190, 255, 190));
+    border-radius: 16px;
+    padding: 5px 12px;
+    font-weight: bold;
+}
