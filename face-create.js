@@ -49,7 +49,6 @@ export default function insertFaces(child, generation) {
         setTimeout(() => {
             tooltip.style.display = 'none';
         }, 200); // Allow fade-out before hiding completely
-        
     });
     // end tooltip
 };
@@ -104,6 +103,22 @@ export default function insertFaces(child, generation) {
     position: absolute;
     margin-left: 58px;`
 
+    // creates nose
+    newFace.insertAdjacentHTML("beforeend", `<div class="${child.name}-nose"></div>`);
+    const nose = document.querySelector(`.${child.name}-nose`);
+
+    nose.style.cssText = `
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 58px;
+    left: 45px;
+    width: 20px;
+    height: 20px;
+    background: black;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    `;
+
     // creates pupils
     newFace.insertAdjacentHTML("beforeend", `<div class="${child.name}-pupil1"></div>`);
     newFace.insertAdjacentHTML("beforeend", `<div class="${child.name}-pupil2"></div>`);
@@ -140,7 +155,7 @@ export default function insertFaces(child, generation) {
     border: 1px solid black;
     background-color: black;
     position: absolute;
-    margin-left: 39px;`
+    margin-left: 40px;`
 
     // creates hair
     newFace.insertAdjacentHTML("beforeend", `<div class="${child.name}-hair"></div>`);

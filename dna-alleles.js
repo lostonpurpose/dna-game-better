@@ -23,3 +23,11 @@ export class Hair extends Dna {
         this.domColor = "black";
     }
 }
+
+export class Nose extends Dna {
+
+    constructor(slot1, slot2) {
+    super(slot1, slot2);
+    this.domNose = "triangle"
+    }
+}

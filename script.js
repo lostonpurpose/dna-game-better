@@ -38,17 +38,17 @@ function generateNumberSlot2() {
     return Math.floor((Math.random() * 2) + 1);
 };
 
-
 function generateEyeMutationSlot1() {
     const check = Math.floor((Math.random() * 10) + 1);
     console.log(check);
     return check
-;}
+};
+
 function generateEyeMutationSlot2() {
     const check = Math.floor((Math.random() * 10) + 1);
     console.log(check);
     return check
-;}
+};
 
 function generateHairMutationSlot1() {
     const check = Math.floor((Math.random() * 10) + 1);
@@ -77,7 +77,7 @@ function generateColorSlots(parent1, parent2) {
 
     console.log('After mutation:', colorSlot1, colorSlot2); // Final state of both slots
     return new Color(colorSlot1, colorSlot2);
-}
+};
 
 function generateBorderSlots(parent1, parent2) {
     
@@ -144,10 +144,10 @@ const Nelson = new Element("Nelson", generateColorSlots(Ernest, Tania), generate
 const Regina = new Element("Regina", generateColorSlots(Ernest, Tania), generateBorderSlots(Ernest, Tania), generateHairSlots(Ernest, Tania), Ernest, Tania);
 const Marvin = new Element("Marvin", generateColorSlots(Ernest, Tania), generateBorderSlots(Ernest, Tania), generateHairSlots(Ernest, Tania), Ernest, Tania);
 const Bertha = new Element("Bertha", generateColorSlots(Xavier, Lara), generateBorderSlots(Xavier, Lara), generateHairSlots(Xavier, Lara), Xavier, Lara);
-const Ronnie = new Element("Ronnie", generateColorSlots(Xavier, Lara), generateBorderSlots(Xavier, Lara), generateHairSlots(Xavier, Lara), Xavier, Lara);
+const Mark = new Element("Mark", generateColorSlots(Xavier, Lara), generateBorderSlots(Xavier, Lara), generateHairSlots(Xavier, Lara), Xavier, Lara);
 const Yvonne = new Element("Yvonne", generateColorSlots(Xavier, Lara), generateBorderSlots(Xavier, Lara), generateHairSlots(Xavier, Lara), Xavier, Lara);
 
-const thirdGens = [Boss, Maddie, Hank, Harriet, Nick, Oprah, Nelson, Regina, Marvin, Bertha, Ronnie, Yvonne];
+const thirdGens = [Boss, Maddie, Hank, Harriet, Nick, Oprah, Nelson, Regina, Marvin, Bertha, Mark, Yvonne];
 
 const Will = new Element("Will", generateColorSlots(Boss, Maddie), generateBorderSlots(Boss, Maddie), generateHairSlots(Boss, Maddie), Boss, Maddie);
 const Ayaka = new Element("Ayaka", generateColorSlots(Boss, Maddie), generateBorderSlots(Boss, Maddie), generateHairSlots(Boss, Maddie), Boss, Maddie);
@@ -159,8 +159,8 @@ const Ty = new Element("Ty", generateColorSlots(Nelson, Regina), generateBorderS
 const Millie = new Element("Millie", generateColorSlots(Nelson, Regina), generateBorderSlots(Nelson, Regina), generateHairSlots(Nelson, Regina), Nelson, Regina);
 const Darius = new Element("Darius", generateColorSlots(Marvin, Bertha), generateBorderSlots(Marvin, Bertha), generateHairSlots(Marvin, Bertha), Marvin, Bertha);
 const Chelsea = new Element("Chelsea", generateColorSlots(Marvin, Bertha), generateBorderSlots(Marvin, Bertha), generateHairSlots(Marvin, Bertha), Marvin, Bertha);
-const Donovan = new Element("Donovan", generateColorSlots(Ronnie, Yvonne), generateBorderSlots(Ronnie, Yvonne), generateHairSlots(Ronnie, Yvonne), Ronnie, Yvonne);
-const Leslie = new Element("Leslie", generateColorSlots(Ronnie, Yvonne), generateBorderSlots(Ronnie, Yvonne), generateHairSlots(Ronnie, Yvonne), Ronnie, Yvonne);
+const Donovan = new Element("Donovan", generateColorSlots(Mark, Yvonne), generateBorderSlots(Mark, Yvonne), generateHairSlots(Mark, Yvonne), Mark, Yvonne);
+const Leslie = new Element("Leslie", generateColorSlots(Mark, Yvonne), generateBorderSlots(Mark, Yvonne), generateHairSlots(Mark, Yvonne), Mark, Yvonne);
 
 const fourthGens = [Will, Ayaka, Evan, Amelie, Jarrett, Daisy, Ty, Millie, Darius, Chelsea, Donovan, Leslie];
 
