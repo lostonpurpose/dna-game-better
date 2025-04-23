@@ -166,4 +166,21 @@ button {
     border-radius: 16px;
     padding: 5px 12px;
     font-weight: bold;
+    margin: 0 auto;
+    display: block;
+    margin-top: 16px;
+}
+
+.mutation-text {
+    text-align: center;
+
+}
+
+.mutation-text p {
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+button[hidden] {
+    display: none;
 }
