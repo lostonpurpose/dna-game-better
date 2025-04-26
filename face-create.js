@@ -178,10 +178,10 @@ export default function insertFaces(child, generation) {
     margin-left: 3px;`
 
     // eye color check
-    if (child.colorDna.slot1 === "green" && child.colorDna.slot2 === "green") {
+    if (child.colorDna.slot1 === "pink" && child.colorDna.slot2 === "pink") {
         headContainer.classList.add("color-special");
-        eye1.style.backgroundColor = 'green';
-        eye2.style.backgroundColor = 'green';
+        eye1.style.backgroundColor = 'pink';
+        eye2.style.backgroundColor = 'pink';
     }
     else if (child.colorDna.slot1 === "green" && child.colorDna.slot2 === "green") {
         headContainer.classList.add("color-special");
