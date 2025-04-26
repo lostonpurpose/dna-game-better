@@ -200,7 +200,10 @@ export default function insertFaces(child, generation) {
     }
 
     // hair check
-    if (child.hairDna.slot1 === "blonde" && child.hairDna.slot2 === "blonde") {
+    if (child.hairDna.slot1 === "blue" && child.hairDna.slot2 === "blue") {
+        hair.style.backgroundColor = 'blue';
+    }
+    else if (child.hairDna.slot1 === "blonde" && child.hairDna.slot2 === "blonde") {
         hair.style.backgroundColor = 'goldenrod';
     }
     else if (child.hairDna.slot1 === child.hairDna.domColor || child.hairDna.slot2 === child.hairDna.domColor) {

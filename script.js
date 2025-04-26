@@ -33,7 +33,6 @@ const eve = new Element("Eve", colorRec, borderRec, hairRec);
 function generateNumberSlot1() {
     return Math.floor((Math.random() * 2) + 1);
 };
-
 function generateNumberSlot2() {
     return Math.floor((Math.random() * 2) + 1);
 };
@@ -43,7 +42,6 @@ function generateEyeMutationSlot1() {
     console.log(check);
     return check
 };
-
 function generateEyeMutationSlot2() {
     const check = Math.floor((Math.random() * 10) + 1);
     console.log(check);
@@ -55,7 +53,6 @@ function generateHairMutationSlot1() {
     console.log(check);
     return check
 ;}
-
 function generateHairMutationSlot2() {
     const check = Math.floor((Math.random() * 10) + 1);
     console.log(check);
@@ -67,8 +64,18 @@ function generateSuperEyeMutationSlot1() {
     console.log(check);
     return check
 ;}
-
 function generateSuperEyeMutationSlot2() {
+    const check = Math.floor((Math.random() * 25) + 1);
+    console.log(check);
+    return check
+;}
+
+function generateSuperHairMutationSlot1() {
+    const check = Math.floor((Math.random() * 25) + 1);
+    console.log(check);
+    return check
+;}
+function generateSuperHairMutationSlot2() {
     const check = Math.floor((Math.random() * 25) + 1);
     console.log(check);
     return check
@@ -109,14 +116,13 @@ function generateBorderSlots(parent1, parent2) {
 function generateHairSlots(parent1, parent2) {
     const hairChance1 = generateNumberSlot1();
     let hairSlot1 = hairChance1 === 1 ? parent1.hairDna.slot1 : parent1.hairDna.slot2;
-
     if (generateHairMutationSlot1() === 10) {hairSlot1 = "blonde"};
+    if (generateSuperHairMutationSlot1() === 25) {hairSlot1 = "blue"};
 
     const hairChance2 = generateNumberSlot2();
     let hairSlot2 = hairChance2 === 1 ? parent2.hairDna.slot1 : parent2.hairDna.slot2
-
     if (generateHairMutationSlot2() === 10) {hairSlot2 = "blonde"};
-
+    if (generateSuperHairMutationSlot2() === 25) {hairSlot2 = "blue"};
     return new Hair(hairSlot1, hairSlot2)
 };
 
@@ -286,12 +292,9 @@ window.onload = function() {
 
 autoGen.addEventListener('click', autoGenerate);
 
-
 function regenerate() {
     location.reload();
 };
-
-// regen.addEventListener('click', regenerate);
 
 // Displays # of mutations
 let emutes = 0
