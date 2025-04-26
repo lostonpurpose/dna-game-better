@@ -30,6 +30,7 @@ const eve = new Element("Eve", colorRec, borderRec, hairRec);
 // adam.checkDna();
 // eve.checkDna();
 
+// generate random numbers to determine alleles and mutations
 function generateNumberSlot1() {
     return Math.floor((Math.random() * 2) + 1);
 };
@@ -80,6 +81,7 @@ function generateSuperHairMutationSlot2() {
     console.log(check);
     return check
 ;}
+// end random generation
 
 function generateColorSlots(parent1, parent2) {
     const colorChance1 = generateNumberSlot1();

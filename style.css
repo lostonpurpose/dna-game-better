@@ -172,7 +172,12 @@ button {
 }
 
 .mutation-text {
-    text-align: center;
+    right: 0;
+    position: fixed;
+    background-color: rgb(146, 203, 246);
+    padding: 8px;
+    border: 0;
+    border-radius: 15px;
 }
 
 .mutation-text p {
@@ -182,4 +187,8 @@ button {
 
 button[hidden] {
     display: none;
+}
+
+.master {
+    display: flex;
 }
