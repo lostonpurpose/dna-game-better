@@ -62,18 +62,34 @@ function generateHairMutationSlot2() {
     return check
 ;}
 
+function generateSuperEyeMutationSlot1() {
+    const check = Math.floor((Math.random() * 25) + 1);
+    console.log(check);
+    return check
+;}
+
+function generateSuperEyeMutationSlot2() {
+    const check = Math.floor((Math.random() * 25) + 1);
+    console.log(check);
+    return check
+;}
+
 function generateColorSlots(parent1, parent2) {
     const colorChance1 = generateNumberSlot1();
     let colorSlot1 = colorChance1 === 1 ? parent1.colorDna.slot1 : parent1.colorDna.slot2;
     const mutationSlot1 = generateEyeMutationSlot1(); // Check mutation value for Slot 1
     console.log('Before mutation Slot 1:', colorSlot1, 'Mutation check:', mutationSlot1);
     if (mutationSlot1 === 10) { colorSlot1 = "green"; }
+    const superMutation1 = generateSuperEyeMutationSlot1(); // check for super mutation
+    if (superMutation1 === 25) { colorSlot1 = "pink"; }
 
     const colorChance2 = generateNumberSlot2();
     let colorSlot2 = colorChance2 === 1 ? parent2.colorDna.slot1 : parent2.colorDna.slot2;
     const mutationSlot2 = generateEyeMutationSlot2(); // Check mutation value for Slot 2
     console.log('Before mutation Slot 2:', colorSlot2, 'Mutation check:', mutationSlot2);
     if (mutationSlot2 === 10) { colorSlot2 = "green"; }
+    const superMutation2 = generateSuperEyeMutationSlot2(); // check for super mutation
+    if (superMutation2 === 25) { colorSlot2 = "pink"; }
 
     console.log('After mutation:', colorSlot1, colorSlot2); // Final state of both slots
     return new Color(colorSlot1, colorSlot2);
