@@ -105,18 +105,25 @@ export default function insertFaces(child, generation) {
 
     // creates nose
     newFace.insertAdjacentHTML("beforeend", `<div class="${child.name}-nose"></div>`);
+    newFace.insertAdjacentHTML("beforeend", `<div class="${child.name}-nose2"></div>`);
     const nose = document.querySelector(`.${child.name}-nose`);
+    const nose2 = document.querySelector(`.${child.name}-nose2`);
 
     nose.style.cssText = `
-    width: 0;
-    height: 0;
+    width: 15px;
+    border: 1px solid black;
+    transform: rotate(66deg);
+    margin-top: 58px;
+    margin-left: 49px;
     position: absolute;
-    top: 58px;
-    left: 45px;
-    width: 20px;
-    height: 20px;
-    background: black;
-    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    `;
+
+    nose2.style.cssText = `
+    width: 12px;
+    border: 1px solid black;
+    margin-top: 66px;
+    margin-left: 47px;
+    position: absolute;
     `;
 
     // creates pupils
