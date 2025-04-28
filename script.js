@@ -287,10 +287,15 @@ window.onload = function() {
         genThreeButton.hidden = true;
         genFourButton.hidden = true;
         autoGen.innerText = "Regenerate";
-        // regen.hidden = false;
+        const textView = document.querySelector('.info-2');
+        const textViewBox = document.querySelector('.info-2-div');
+
+        // textView.classList.remove = 'none';
+        textView.classList.add('show'); // Add 'show' class to fade in
+        textViewBox.classList.add('show'); // Add 'show' class to fade in
+
     }
 };
-
 
 autoGen.addEventListener('click', autoGenerate);
 

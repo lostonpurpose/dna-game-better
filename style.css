@@ -185,6 +185,62 @@ button {
     margin-top: 8px;
 }
 
+.info-1-div {
+    left: 0;
+    position: fixed;
+    background-color: rgb(146, 203, 246);
+    padding: 8px;
+    border: 0;
+    border-radius: 15px;
+    max-width: 30%;
+}
+
+.info-2-div {
+    left: 0;
+    top: 95px;
+    position: fixed;
+    background-color: rgb(146, 203, 246);
+    padding: 8px;
+    border: 0;
+    border-radius: 15px;
+    max-width: 30%;
+
+    visibility: hidden;  /* Make it invisible */
+    opacity: 0; 
+    transition: opacity 0.8s ease, visibility 0s linear 0.8s; /* Use visibility for hiding */
+}
+
+.info-2-div.show {
+    visibility: visible;  /* Make it visible */
+    opacity: 1;
+    transition: opacity 0.8s ease, visibility 0s linear 0s; /* Keep the transition for opacity */
+}
+
+.info-1 p, .info-2 p {
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+/* Initially hide info-2 */
+.info-2 {
+    visibility: hidden;  /* Make it invisible */
+    opacity: 0; 
+    transition: opacity 0.8s ease, visibility 0s linear 0.8s; /* Use visibility for hiding */
+} 
+
+/* When show class is added, make info-2 visible */
+.info-2.show {
+    visibility: visible;  /* Make it visible */
+    opacity: 1;
+    transition: opacity 0.8s ease, visibility 0s linear 0s; /* Keep the transition for opacity */
+}
+
+/* Ensure .info-1 is not affected */
+/* .info-1-div {
+    visibility: visible; /* Makes sure it's visible */
+    /* opacity: 1; Ensures the text is visible */
+/* } */
+
 button[hidden] {
     display: none;
 }
