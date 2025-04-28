@@ -191,4 +191,9 @@ button[hidden] {
 
 .master {
     display: flex;
+    width: 100%;
+}
+
+.sub-master {
+    width: 100%;
 }
