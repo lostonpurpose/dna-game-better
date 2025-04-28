@@ -172,7 +172,7 @@ button {
 }
 
 .mutation-text {
-    right: 0;
+    right: 8px;
     position: fixed;
     background-color: rgb(146, 203, 246);
     padding: 10px;
@@ -186,7 +186,7 @@ button {
 }
 
 .info-1-div {
-    left: 0;
+    left: 8px;
     position: fixed;
     background-color: rgb(146, 203, 246);
     padding: 0px;
@@ -197,7 +197,7 @@ button {
 }
 
 .info-2-div {
-    left: 0;
+    left: 8px;
     top: 87px;
     position: fixed;
     background-color: rgb(146, 203, 246);
@@ -212,14 +212,14 @@ button {
 }
 
 .info-3-div {
-    left: 0;
+    left: 8px;
     top: 147px;
     position: fixed;
     background-color: rgb(146, 203, 246);
     /* padding: 8px; */
     border: 0;
     border-radius: 15px;
-    max-width: 15%;
+    max-width: 14%;
 
     visibility: hidden;  /* Make it invisible */
     opacity: 0; 
