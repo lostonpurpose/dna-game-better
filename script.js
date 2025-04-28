@@ -289,10 +289,14 @@ window.onload = function() {
         autoGen.innerText = "Regenerate";
         const textView = document.querySelector('.info-2');
         const textViewBox = document.querySelector('.info-2-div');
+        const textView3 = document.querySelector('.info-3');
+        const textViewBox3 = document.querySelector('.info-3-div');
 
         // textView.classList.remove = 'none';
         textView.classList.add('show'); // Add 'show' class to fade in
         textViewBox.classList.add('show'); // Add 'show' class to fade in
+        textView3.classList.add('show'); // Add 'show' class to fade in
+        textViewBox3.classList.add('show'); // Add 'show' class to fade in
 
     }
 };

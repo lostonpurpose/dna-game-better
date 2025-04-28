@@ -175,21 +175,22 @@ button {
     right: 0;
     position: fixed;
     background-color: rgb(146, 203, 246);
-    padding: 8px;
+    padding: 10px;
     border: 0;
     border-radius: 15px;
 }
 
 .mutation-text p {
-    margin-bottom: 8px;
-    margin-top: 8px;
+    margin: 0;
+    padding: 0;
 }
 
 .info-1-div {
     left: 0;
     position: fixed;
     background-color: rgb(146, 203, 246);
-    padding: 8px;
+    padding: 0px;
+    margin: 0;
     border: 0;
     border-radius: 15px;
     max-width: 30%;
@@ -197,13 +198,28 @@ button {
 
 .info-2-div {
     left: 0;
-    top: 95px;
+    top: 87px;
     position: fixed;
     background-color: rgb(146, 203, 246);
-    padding: 8px;
+    /* padding: 8px; */
     border: 0;
     border-radius: 15px;
     max-width: 30%;
+
+    visibility: hidden;  /* Make it invisible */
+    opacity: 0; 
+    transition: opacity 0.8s ease, visibility 0s linear 0.8s; /* Use visibility for hiding */
+}
+
+.info-3-div {
+    left: 0;
+    top: 147px;
+    position: fixed;
+    background-color: rgb(146, 203, 246);
+    /* padding: 8px; */
+    border: 0;
+    border-radius: 15px;
+    max-width: 15%;
 
     visibility: hidden;  /* Make it invisible */
     opacity: 0; 
@@ -216,20 +232,33 @@ button {
     transition: opacity 0.8s ease, visibility 0s linear 0s; /* Keep the transition for opacity */
 }
 
-.info-1 p, .info-2 p {
-    margin-bottom: 8px;
-    margin-top: 8px;
+.info-3-div.show {
+    visibility: visible;  /* Make it visible */
+    opacity: 1;
+    transition: opacity 0.8s ease, visibility 0s linear 0s; /* Keep the transition for opacity */
+}
+
+.info-1 {
+    margin: 0;
+    padding: 10px;
+}
+
+.info-1 p, .info-2 p, .info-3 p {
+    margin: 0;
+    padding: 0;
 }
 
 /* Initially hide info-2 */
-.info-2 {
+.info-2, .info-3 {
+    margin: 0;
+    padding: 10px;
     visibility: hidden;  /* Make it invisible */
     opacity: 0; 
     transition: opacity 0.8s ease, visibility 0s linear 0.8s; /* Use visibility for hiding */
 } 
 
 /* When show class is added, make info-2 visible */
-.info-2.show {
+.info-2.show, .info-3.show {
     visibility: visible;  /* Make it visible */
     opacity: 1;
     transition: opacity 0.8s ease, visibility 0s linear 0s; /* Keep the transition for opacity */
