@@ -3,6 +3,8 @@ import { Element } from "./element.js";
 import insertFaces from "./face-create.js";
 import { og, genTwo, genThree, genFour, timEric } from "./face-create.js";
 
+document.addEventListener("DOMContentLoaded", function() {
+    
 const colorDom = new Color("brown", "brown");
 const colorRec = new Color("blue", "blue");
 
@@ -325,3 +327,5 @@ fourthGens.forEach(child => {
 });
 const hMutations = document.querySelector(".h-mutes");
 hMutations.insertAdjacentText("beforeend", `${hmutes}`);
+
+});
