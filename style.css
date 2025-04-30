@@ -175,7 +175,7 @@ button {
     right: 8px;
     position: fixed;
     background-color: rgb(146, 203, 246);
-    padding: 10px;
+    padding: 8px;
     border: 0;
     border-radius: 15px;
 }
@@ -240,18 +240,18 @@ button {
 
 .info-1 {
     margin: 0;
-    padding: 10px;
+    padding: 8px;
 }
 
-.info-1 p, .info-2 p, .info-3 p {
+/* .info-1 p, .info-2 p, .info-3 p {
     margin: 0;
     padding: 0;
-}
+} */
 
 /* Initially hide info-2 */
 .info-2, .info-3 {
     margin: 0;
-    padding: 10px;
+    padding: 8px;
     visibility: hidden;  /* Make it invisible */
     opacity: 0; 
     transition: opacity 0.8s ease, visibility 0s linear 0.8s; /* Use visibility for hiding */
@@ -281,4 +281,8 @@ button[hidden] {
 
 .sub-master {
     width: 100%;
+}
+
+p {
+    line-height: 1.4;
 }
